@@ -13,12 +13,14 @@ const LEAGUE = process.env.DUNKEST_DRAFT_LEAGUE_ID || '155535';
 const API = 'https://fantaking-api.dunkest.com/api/v1';
 const ONLY_CURRENT = process.env.H2H_ONLY_CURRENT === 'true'; // durante le partite: solo la giornata in corso
 
+// tollera virgolette, spazi, a capo e il prefisso "Bearer " copiati per errore
+const CLEAN = String(TOKEN || '').trim().replace(/^"|"$/g, '').replace(/^Bearer\s+/i, '').trim();
 if (!TOKEN) { console.log('H2H: DUNKEST_TOKEN non impostato, salto.'); process.exit(0); }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function api(path) {
-  const res = await fetch(`${API}/${path}`, { headers: { Authorization: `Bearer ${TOKEN.replace(/^"|"$/g, '')}`, Accept: 'application/json', 'User-Agent': 'mcc-fantanba-sync/1.2' } });
-  if (res.status === 401) throw new Error('DUNKEST_TOKEN scaduto o non valido (401): va rigenerato');
+  const res = await fetch(`${API}/${path}`, { headers: { Authorization: `Bearer ${CLEAN}`, Accept: 'application/json', 'User-Agent': 'mcc-fantanba-sync/1.2' } });
+  if (res.status === 401) throw new Error(`DUNKEST_TOKEN scaduto o non valido (401): va rigenerato [lunghezza ${CLEAN.length}, formato ${/^eyJ[\w-]+\.[\w-]+\.[\w-]+$/.test(CLEAN) ? 'JWT corretto' : 'NON è un token JWT'}]`);
   if (!res.ok) return { _error: res.status, _path: path };
   const j = await res.json();
   await sleep(250); // gentili con l'API
