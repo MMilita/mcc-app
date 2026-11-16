@@ -1,0 +1,42 @@
+name: Sync Dunkest
+# Crediti, PDK e medie dei giocatori dall'API pubblica Dunkest → Firestore.
+# - ogni 15 minuti tra le 01:00 e le 07:45 italiane (00:00-06:45 UTC): solo punti live + calendario
+# - 08:30 e 14:30 italiane: anche crediti/PDK di tutti i giocatori (dopo i ricalcoli Dunkest)
+# ~30 esecuzioni/giorno da <1 min fatturato = ~900 min/mese, sotto i 2000 min gratuiti di GitHub Actions.
+on:
+  schedule:
+    - cron: '*/15 0-6 * * *'
+    - cron: '30 7 * * *'
+    - cron: '30 13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/260909537293/locations/global/workloadIdentityPools/github/providers/github
+          service_account: mcc-sync@my-project-1516274864079.iam.gserviceaccount.com
+          token_format: access_token
+      - run: node scripts/sync-dunkest.mjs
+        env:
+          FIRESTORE_TOKEN: ${{ steps.auth.outputs.access_token }}
+          SYNC_PLAYERS: ${{ github.event_name != 'schedule' || github.event.schedule == '30 7 * * *' || github.event.schedule == '30 13 * * *' }}
+      - name: Calendario, risultati e formazioni H2H (lega Draft Dunkest)
+        run: node scripts/sync-h2h.mjs
+        continue-on-error: true
+        env:
+          FIRESTORE_TOKEN: ${{ steps.auth.outputs.access_token }}
+          DUNKEST_TOKEN: ${{ secrets.DUNKEST_TOKEN }}
+          H2H_ONLY_CURRENT: ${{ github.event_name == 'schedule' && github.event.schedule != '30 7 * * *' && github.event.schedule != '30 13 * * *' }}

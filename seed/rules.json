@@ -1,0 +1,144 @@
+{
+ "title": "Regolamento FantaNBA",
+ "source": "Regolamento Milano City Championship.pdf",
+ "sections": [
+  {
+   "num": "1",
+   "title": "Cos’è il FantaNBA?",
+   "body": "Il FantaNBA è un fantacampionato che si basa sulle partite del campionato professionistico di basket americano, la NBA.\n\nI partecipanti, che ottengono il titolo di Owner (proprietario) e GM (General Manager), gestiscono con pieni poteri una franchigia, ovvero una squadra, all’interno di una Lega composta da 16 franchigie.\n\nIl FantaNBA è pluriennale, quindi il GM guiderà la propria franchigia per tutti i campionati che si susseguiranno anno dopo anno.\n\nÈ fondamentale per la riuscita del gioco che tutti i partecipanti si impegnino a guidare al meglio la propria franchigia attraverso tutte le fasi del fantacampionato; per far ciò ogni GM dovrà intervenire con regolarità e puntualità in tutte le occasioni in cui ciò è necessario.\n\nIl Commissioner è il riferimento unico per tutti i GM della Lega, agisce in modo imparziale ed equilibrato e si occupa della perfetta riuscita del gioco all'interno della Lega.",
+   "id": "art-1"
+  },
+  {
+   "num": "1.1",
+   "title": "Quota e montepremi",
+   "body": "La quota di partecipazione è di 56.00 € a franchigia. Il montepremi è così diviso:\n\n1° Classificato: 400.00 €\n\n2° Classificato: 175.00 €\n\n3° Classificato: 75.00 €\n\n4° Classificato: 50.00 €\n\n5° Classificato: 40.00 €\n\n6° Classificato: 30.00 €\n\n7° Classificato: 20.00 €\n\n8° Classificato: 10.00 €\n\nI rimanenti 96.00 € vengono suddivisi alle franchigie che avranno a roster i giocatori vincitori dei premi individuali di fine stagione (vedi paragrafo 5).",
+   "id": "art-1-1"
+  },
+  {
+   "num": "2",
+   "title": "Il Campionato",
+   "body": "La lega del FantaNBA è composta da 16 franchigie. Non ci sono ulteriori suddivisioni in Conference. Il campionato come per l'NBA si divide in Regular Season (RS) e Playoff/Playout (PO).\n\nAl termine della RS le sei migliori classificate accedono direttamente ai playoff, mentre le sei peggiori classificate accedono direttamente ai playout; le quattro squadre classificate tra il settimo e il decimo posto disputano un torneo play-in per decidere quali tra loro accederanno ai playoff e quali ai playout. All’interno della RS si svolge l’In-Season Tournament.\n\nIl calendario e la classifica della RS tengono fede alla lega privata che viene creata sul sito Dunkest. L’In-Season Tournament, il torneo play-in e il tabellone PO vengono creati a parte su file Excel.\n\nPer tutte le regole di base dello svolgimento del campionato fa fede il regolamento Dunkest (https://docs.dunkest.com/#modalita-classica).",
+   "id": "art-2"
+  },
+  {
+   "num": "2.1",
+   "title": "Torneo Play-In",
+   "body": "Al termine della RS le squadre posizionate tra la settima e la decima posizione si sfidano in un torneo di due giornate a eliminazione semi-diretta.\n\nNella prima giornata si sfidano la squadra settima classificata contro l’ottava (la vincente si qualifica direttamente ai playoff come settima testa di serie) e la nona classificata contro la decima; la vincente di questa sfida affronta nella seconda giornata la perdente della sfida tra la settima e l’ottava (la vincente si qualifica come testa di serie numero otto); le due squadre eliminate accedono ai playout.\n\nLe squadre meglio classificate durante la RS hanno il vantaggio del fattore campo che equivale a 15 punti.",
+   "id": "art-2-1"
+  },
+  {
+   "num": "2.2",
+   "title": "Playoff/Playout",
+   "body": "Alla fine della Regular Season si svolgono i playoff per l’assegnazione del titolo di Campione di Lega e i playout per l’assegnazione dell’ordine di scelta al primo giro del draft dell’anno successivo.\n\nAi playoff accedono le prime sei classificate al termine della RS e le due qualificate dal torneo play-in, ai playout le ultime sei e le due eliminate.\n\nLe squadre si sfidano in due tabelloni complementari in tre turni (quarti di finale, semifinali e finale) in base ai record della RS secondo il seguente schema:\n\n1° vs 8° (playoff) - 9° vs 16° (playout)\n\n2° vs 7° (playoff) - 10° vs 15° (playout)\n\n3° vs 6° (playoff) - 11° vs 14° (playout)\n\n4° vs 5° (playoff) - 12° vs 13° (playout)\n\nSemifinali e finali proseguono normalmente tra le vincenti delle sfide sopracitate.\n\nLe serie si giocano al meglio delle 3/5 partite (a seconda della disponibilità di giornate del calendario Dunkest), con gara1 ed eventuali gara3 e gara 5 in casa della squadra con il miglior record in RS.\n\nLe squadre che giocano in casa hanno il vantaggio del fattore campo che equivale a 15 punti.\n\nLe squadre sconfitte ai vari turni si sfidano tra loro secondo il record della RS per l’assegnazione delle posizioni finali; tutte le franchigie giocano quindi fino all’ultimo turno di PO.",
+   "id": "art-2-2"
+  },
+  {
+   "num": "2.3",
+   "title": "In Season Tournament",
+   "body": "Durante il secondo girone di Regular Season viene disputato l’In-Season Tournament.\n\nIn base alla classifica al termine del primo girone di RS le franchigie vengono divise in quattro fasce:\n\n• fascia 1 - squadre dalla prima alla quarta posizione\n\n• fascia 2 - squadre dalla quinta all’ottava posizione\n\n• fascia 3 - squadre dalla nona alla dodicesima posizione\n\n• fascia 4 - squadre dalla tredicesima alla sedicesima posizione\n\nSuccessivamente le franchigie vengono sorteggiate e suddivise in quattro gironi da quattro squadre (tutte di fascia diversa).\n\nOgni squadra disputa una partita contro ciascuna delle altre squadre del proprio girone e una partita contro ciascuna delle altre squadre della propria fascia di sorteggio per un totale di sei partite.\n\nTutte le gare vengono disputate in campo neutro.\n\nSe due o più squadre di un gruppo hanno lo stesso record al termine del girone, per stabilire la classifica finale vengono applicati i seguenti criteri:\n\n- Scontri diretti nella fase a gironi;\n\n- Totale punti nella fase a gironi;\n\n- Record migliore in classifica generale;\n\n- Estrazione casuale.\n\nLe due migliori squadre di ogni gruppo si qualificano alla fase ad eliminazione diretta con quarti di finale, semifinali e finale in campo neutro seguendo il seguente schema di base:\n\n1A vs 2B\n\n1C vs 2D\n\n1B vs 2A\n\n1D vs 2C\n\nTutte le partite hanno validità anche per la Regular Season.\n\nLa franchigia vincitrice dell’In-Season Tournament otterrà il premio di 50.00 € (che verrà prelevato dalla Luxury Tax di fine anno) e una scelta aggiuntiva al FantaDraft dell’anno successivo (tra la 32esima e la 33esima pick).",
+   "id": "art-2-3"
+  },
+  {
+   "num": "3",
+   "title": "Composizione Roster",
+   "body": "Per disporre di un giocatore una squadra deve vincolare lo stesso tramite un regolare contratto garantito. Un contratto garantito è costituito da un compenso annuo e da una durata, nell’ambito della quale il compenso stesso deve essere corrisposto; la durata va da un minimo di 1 ad un massimo di 3 anni, mentre il compenso annuo varia a seconda della durata stessa del contratto.\n\nOgni squadra deve essere composta obbligatoriamente da un minimo di 10 giocatori (di cui 4 guardie, 4 ali e 2 centri) e da un massimo di 15 giocatori.\n\nDei cinque giocatori “extra” non è possibile averne più di tre dello stesso ruolo.\n\nIl compenso annuo del primo anno di contratto è uguale al valore che Dunkest assegna al giocatore nel momento in cui il giocatore stesso viene acquistato.\n\nNel caso in cui si decida di dare al giocatore più anni di contratto, il compenso annuo crescerà del +50% nel secondo anno e del +100% nel terzo anno rispetto al compenso iniziale.\n\nIn caso di valore decimale oltre la prima cifra il costo viene approssimato per eccesso.\n\nEsempio: scelgo LeBron James al Draft (valore Dunkest 19 crediti).\n\n1 anno di contratto: compenso annuo di 19 milioni.\n\n2 anni di contratto: compenso annuo di 19 milioni nel primo anno e di 28.5 milioni nel secondo anno. 3 anni di contratto: compenso annuo di 19 milioni nel primo anno, di 28.5 milioni nel secondo anno e di 38 milioni nel terzo anno.",
+   "id": "art-3"
+  },
+  {
+   "num": "3.1",
+   "title": "Salary Cap e Salary Floor",
+   "body": "Per formare il proprio roster ogni GM ha a disposizione un monte stipendi annuale pari a 120 milioni definito Salary Cap.\n\nIl Salary Cap è di tipo “soft”; ciò significa che le squadre possono sforarlo per firmare i propri giocatori rimanendo però all’interno del limite massimo di 150 milioni definito Apron.\n\nLa fascia di spesa che va dal Salary Cap all’Apron è definita Luxury Tax.\n\nSe la somma dei compensi annui dei giocatori al termine della stagione rientra nella Luxury Tax, le franchigie devono pagare alla Lega una “tassa di lusso” che viene poi ridistribuita alle squadre che rimangono sotto il Cap (fino ad un massimo del 20% della quota di partecipazione).\n\nGli eventuali soldi avanzati vengono suddivisi in parti uguali e aggiunti al montepremi.\n\nIl costo della Luxury Tax è di 1€ per ogni milione oltre il Salary Cap e si applica anche per i centesimi. In caso di sforamento per due anni consecutivi la tassa aumenterà nel secondo anno a 2€ per ogni milione. Non è consentito sforare il Salary Cap per tre anni consecutivi pena l’annullamento dei contratti in essere dei giocatori con più valore Dunkest del roster (fino a rientrare nel limite del Salary Cap) e conseguente rilascio in Free Agency dei giocatori stessi.\n\nIl Salary Cap annuale viene calcolato al termine della Regular Season ma, in caso di sforamento in fase di FantaDraft, non può essere in alcun caso inferiore a tale cifra.\n\nUn’altra soglia è il Salary Floor: ogni franchigia deve spendere per i compensi dei propri giocatori almeno l’80% del Cap, pari a 96 crediti.",
+   "id": "art-3-1"
+  },
+  {
+   "num": "4",
+   "title": "Gestione del Roster",
+   "body": "Il roster di una squadra è composto dall’insieme di tutti i giocatori vincolati da contratto garantito. Ogni squadra può avere nel roster un massimo di 15 giocatori.\n\nTenendo presente questo fondamentale vincolo ogni GM deve cercare di gestire al meglio la propria squadra; per farlo egli ha a disposizione gli strumenti descritti di seguito.",
+   "id": "art-4"
+  },
+  {
+   "num": "4.1",
+   "title": "FantaDraft e FantaLottery",
+   "body": "Subito dopo la pubblicazione della lista giocatori da parte di Dunkest vengono programmati il FantaDraft e la FantaLottery.\n\nIl FantaDraft è il sistema mediante cui ogni GM ha l’opportunità di scegliere un giocatore libero, vincolarlo con un contratto e inserirlo nel roster.\n\nLa FantaLottery è l’estrazione casuale dei giri che compongono il FantaDraft.\n\nL’ordine di scelta del primo giro viene stabilito attraverso l’esito dei playout dell’anno precedente (prime 8 scelte) e la classifica finale dell’anno precedente (ultime 8 scelte).\n\nI giri successivi vengono invece sorteggiati prima del FantaDraft, con le franchigie che rimangono però suddivise nei due gruppi da otto del primo giro.",
+   "id": "art-4-1"
+  },
+  {
+   "num": "4.2",
+   "title": "Mercato libero e firma di Free Agent",
+   "body": "Il mercato libero è aperto solamente durante la RS fino alla Trade Deadline. (vedi paragrafo 6).\n\nPer firmare un FA con un contratto garantito è necessario avere nel proprio roster meno di 15 giocatori e disporre di abbastanza spazio salariale.\n\nIl GM dovrà procedere con la comunicazione dell’offerta sul gruppo Whatsapp dedicato al mercato.\n\nL’offerta non può essere inferiore al valore Dunkest del giocatore al momento della comunicazione ed è annullabile tramite commento alla comunicazione stessa entro 12 ore.\n\nLa comunicazione può avvenire in qualsiasi momento e a qualsiasi ora; entro 12 ore dalla comunicazione ogni altro GM ha la possibilità di rilanciare l’offerta iniziale.\n\nOgni qualvolta viene presentata una nuova offerta ripartono le 12 ore di tempo per poter rilanciare.\n\nPer poter partecipare all’asta bisogna effettuare almeno un rilancio nelle prime 12 ore.\n\nIl limite massimo dell’asta è fissato a 48 ore, al termine delle quali le franchigie ancora in corsa dovranno presentare un’offerta in busta chiusa al Commissioner (qualora il Commissioner facesse parte di una delle franchigie interessate verrà scelto un sostituto tra i GM non partecipanti all’asta).\n\nLa franchigia che offrirà la cifra più alta si aggiudicherà il giocatore.\n\nIl termine ultimo per potersi dichiarare interessati ad un FA è di 48 ore prima della Trade Deadline. Qualora l’asta si protragga oltre il termine ultimo la franchigia partecipante alla stessa che non si è aggiudicata il giocatore avrà la possibilità di ingaggiare un altro FA che era libero prima del suddetto termine.\n\nAl termine dell’asta il GM che si sarà aggiudicato il giocatore comunicherà la durata del contratto che vorrà dare al giocatore stesso.\n\nL’ingaggio diventa ufficiale dopo la conferma da parte del Commissioner.",
+   "id": "art-4-2"
+  },
+  {
+   "num": "4.3",
+   "title": "Scambi",
+   "body": "Uno scambio (o trade) prevede l’annuncio sul gruppo Whatsapp dedicato al mercato dei giocatori e delle squadre coinvolte nella trattativa. In particolare, occorre specificare in modo chiaro per ogni giocatore coinvolto la squadra di partenza e la squadra di destinazione.\n\nI giocatori coinvolti nelle trade saranno utilizzabili dalle nuove franchigie di appartenenza dalla giornata successiva all’ufficializzazione dello scambio.\n\nGli scambi devono essere completati rispettando sia il limite del Salary Cap sia il vincolo sul numero di giocatori componenti il roster anche, se necessario, attraverso opportune operazioni di taglio o firma di FA entro l’inizio della giornata di gioco successiva alla conferma.\n\nNelle trade si possono includere le scelte ai Draft dei successivi tre anni; possono essere scambiate anche solo le scelte ai Draft, sempre nel limite dei tre anni successivi.\n\nNon è possibile accordarsi per scambiare giocatori e scelte in una fase di mercato diversa da quella in cui avviene la trade.\n\nNon è possibile inserire in un singolo scambio più di tre giocatori per franchigia.\n\nLa differenza di compenso annuo tra i giocatori scambiati non può superare i 20 milioni e il valore totale dei contratti scambiati non può superare i 50 milioni.\n\nDue franchigie non possono effettuare più di uno scambio tra di loro a distanza di meno un mese. I giocatori scambiati non possono tornare tramite trade alla franchigia di provenienza prima che sia trascorso un anno dalla loro cessione.\n\nGli scambi sono possibili durante la RS fino alla Trade Deadline e nella fase di preseason (vedi paragrafo 6).\n\nLo scambio diventa ufficiale dopo la conferma da parte del Commissioner.",
+   "id": "art-4-3"
+  },
+  {
+   "num": "4.4",
+   "title": "Tagli",
+   "body": "Ogni franchigia ha a disposizione quattro tagli a stagione.\n\nNon rientrano nel computo dei tagli i giocatori rilasciati perché senza contratto NBA.\n\nIl taglio comporta lo spostamento del giocatore dal roster attivo alla cosiddetta “Lista Tagliati”. Il contratto del giocatore tagliato rimane parzialmente valido per tutta la sua durata e deve essere considerato nel computo del Salary Cap della squadra di appartenenza.\n\nPer ogni taglio la parte dello stipendio che continuerà a pesare sul CAP sarà del 50%; la cifra ottenuta si arrotonda per difetto in caso di valore decimale oltre la prima cifra.\n\nEs. Taglio Markkanen al primo anno di tre di contratto pagato 12.3 crediti.\n\nIl primo anno peserà sul CAP 6.1 (50% di 12.3 = 6.15 arrotondato a 6.1)\n\nIl secondo anno peserà sul CAP 9.2 (50% di 18.5 = 9.25 arrotondato a 9.2)\n\nIl terzo anno peserà sul CAP 12.3 (50% di 24.6 = 12.3)\n\nUn giocatore tagliato diventa un FA a tutti gli effetti, prendibile tramite asta pubblica secondo le modalità vigenti per qualunque altro free agent.\n\nQualora un giocatore rilasciato venga firmato da un’altra franchigia, la franchigia che ha effettuato il taglio dovrà elargire comunque quanto esposto precedentemente.\n\nQualora un giocatore rilasciato venga rifirmato dalla stessa franchigia prima del termine del precedente accordo, i contratti si sommerebbero anziché compensarsi.\n\nI tagli sono possibili durante la RS fino alla Trade Deadline e nella fase di preseason (vedi paragrafo 6).",
+   "id": "art-4-4"
+  },
+  {
+   "num": "4.5",
+   "title": "Giocatori senza contratto NBA e cambio ruolo",
+   "body": "I giocatori che non hanno contratto in essere in NBA, quindi nei seguenti casi:\n\n- Ritiro dall'attività agonistica\n\n- Cessione in altra lega\n\n- Giocatore non più vincolato da contratto con alcuna squadra NBA\n\no che non sono presenti nel listone Dunkest non possono in alcun modo essere messi sotto contratto e la squadra che ne detiene il contratto può avvalersi della facoltà di annullare lo stesso.\n\nSe un GM taglia un giocatore prima che lo faccia la franchigia NBA per cui questo giocatore è sotto contratto, taglio e buyout NON vengono in alcun modo recuperati.\n\nI giocatori inviati dalla propria franchigia NBA in D-League o con contratto Two-Way non rientrano in questa casistica perché il loro contratto NBA rimane in essere.\n\nLa fase di cambio ruolo avviene dopo la pubblicazione della lista giocatori Dunkest: i giocatori con contratto garantito per la stagione entrante che hanno subito una variazione di ruolo rispetto a quella precedente verranno automaticamente aggiornati nella nuova posizione a roster.",
+   "id": "art-4-5"
+  },
+  {
+   "num": "4.6",
+   "title": "Rinnovi contrattuali",
+   "body": "I rinnovi contrattuali scattano in automatico al termine della stagione per tutti i giocatori con contratto garantito per l’anno successivo.\n\nTutti i giocatori con contratto scaduto diventeranno FA.",
+   "id": "art-4-6"
+  },
+  {
+   "num": "4.7",
+   "title": "Dichiarazione RFA",
+   "body": "Ogni franchigia ha la possibilità, al termine della stagione, di dichiarare un solo giocatore in scadenza di contratto come Restricted Free Agent (RFA).\n\nPrima del Draft dell’anno successivo la franchigia avrà quindi la possibilità di rifirmare il giocatore dichiarato RFA con un contratto annuale alle seguenti condizioni:\n\n- Giocatore dichiarato RFA al termine del primo anno di contratto: nuova valutazione Dunkest.\n\n- Giocatore dichiarato RFA al termine del secondo o terzo anno di contratto: valore massimo tra la\n\nnuova valutazione Dunkest e il costo dell’ultimo anno di contratto.\n\nNon è possibile dichiarare RFA un giocatore al termine della Rookie Scale.\n\nNel caso in cui una franchigia risulti vacante in questa fase verrà dichiarato RFA il giocatore in scadenza con il valore contrattuale più alto.",
+   "id": "art-4-7"
+  },
+  {
+   "num": "4.8",
+   "title": "Injury List",
+   "body": "Un giocatore che risulterà infortunato a lungo termine, considerato \"out for the season\" o con data di rientro prevista successiva all’ultima giornata dei PO in almeno uno dei due siti di riferimento:\n\nhttps://www.dunkest.com/it/nba/infortuni https://www.cbssports.com/nba/injuries/\n\no tramite comunicato ufficiale del team, potrà essere inserito nella Injury List.\n\nTale spostamento comporterà:\n\n- Recupero dello slot occupato dal giocatore\n\n- Recupero del 90% del contratto\n\nIl giocatore in questione NON potrà essere utilizzato né ceduto dalla squadra prima della stagione successiva, neanche in caso di rientro anticipato dall'infortunio.\n\nNel caso in cui al termine della RS un giocatore non abbia disputato alcuna partita nell’anno solare in corso o risulti infortunato/squalificato con data di rientro prevista successiva alla metà dei PO potrà essere inserito nella Injury List.",
+   "id": "art-4-8"
+  },
+  {
+   "num": "4.9",
+   "title": "Rookies",
+   "body": "A differenza degli altri giocatori, la durata minima del contratto garantito di un rookie è di due anni e il compenso annuo da offrire non dipende dal valore Dunkest al momento dell’acquisto ma viene stabilito in base alla pick (scelta) corrispondente al reale Draft NBA secondo il seguente schema:\n\n| Pick | 1° anno | 2° anno | 3° anno | 4° anno |\n| 1 | 10 | 11 | 12 | 13 |\n| 2 - 3 | 9 | 10 | 11 | 12 |\n| 4 - 5 | 8 | 8 | 9 | 10 |\n| 6 - 10 | 7 | 7 | 8 | 9 |\n| 11 - 20 | 6 | 6 | 7 | 7 |\n| 21 - 30 | 5 | 5 | 6 | 6 |\n| 31 - 60 | 4 | 4 | 5 | 5 |\n\nI rookie undrafted (non scelti al reale Draft NBA) rientrano nell’ultima fascia della tabella.\n\nIl terzo e quarto anno sono da considerarsi Team Option (TO), quindi sarà a discrezione del GM prolungare o no il contratto del rookie in questione per gli ultimi due anni della Rookie Scale al termine della seconda stagione.\n\nIn mancanza di prolungamento del contratto vengono persi i diritti di firma sul rookie, il quale viene inserito nella lista FA.\n\nOgni franchigia deve obbligatoriamente avere almeno un rookie a roster durante tutta la stagione.\n\nNB. La Rookie Scale è valida solamente per i rookie scelti durante il Draft. In caso di acquisto durante il mercato libero le modalità di acquisizione del giocatore saranno le stesse di un qualsiasi giocatore FA.",
+   "id": "art-4-9"
+  },
+  {
+   "num": "5",
+   "title": "Premi individuali",
+   "body": "Al termine della stagione la NBA assegna i premi individuali ai migliori giocatori della RS.\n\n- NBA Most Valuable Player Award\n\n- NBA Rookie of the Year Award\n\n- NBA Sixth Man of the Year Award\n\n- NBA Defensive Player of the Year Award\n\n- NBA Most Improved Player Award\n\n- NBA Clutch Player Award\n\nLe franchigie che avranno nel proprio roster uno o più dei giocatori premiati vinceranno la parte del montepremi totale destinata, equivalente a 16.00 € a premio.",
+   "id": "art-5"
+  },
+  {
+   "num": "6",
+   "title": "Scaletta fasi e appendici",
+   "body": "Ottobre: inizio Regular Season (Possibili: Trades – Tagli – FA)\n\nFebbraio: fine Regular Season (NON possibili: Trades – Tagli – FA)\n\nFebbraio/Marzo: inizio Playoff/Playout (NON possibili: Trades – Tagli – FA)\n\nMarzo/Aprile: fine Playoff/Playout (NON possibili: Trades – Tagli – FA)\n\nMaggio [Offseason]: fase dichiarazione RFA (vedi par. 4.7)\n\nGiugno: rilascio contratti scaduti e rinnovo contratti garantiti (vedi par. 4.6)\n\nSettembre [Preseason]: dopo la pubblicazione della lista giocatori (Possibili: Trades – Tagli; NO possibili: FA) Settembre (a seguire): rilascio giocatori senza contratto NBA e cambio ruolo (vedi par. 4.5)\n\nSettembre (a seguire): FantaLottery (vedi par. 4.1)\n\nSettembre (a seguire): eventuale rifirma del giocatore dichiarato RFA (vedi par. 4.7)\n\nSettembre (a seguire): scelta rinnovi contrattuali rookies al terzo anno (vedi par. 4.9)\n\nOttobre: FantaDraft (vedi par. 4.1)\n\nOttobre: inizio Regular Season (Possibili: Trades – Tagli – FA)",
+   "id": "art-6"
+  },
+  {
+   "num": "6.1",
+   "title": "Divieto Tanking",
+   "body": "Per garantire il regolare svolgimento del campionato è assolutamente vietato il tanking.\n\nIl Commissioner ha il compito di controllare che i migliori giocatori delle squadre non siano tenuti in panchina/tribuna (escluse chiaramente situazioni di infortunio o indisponibilità) e, in caso di assenza prolungata “sospetta”, avvisare il GM in questione per fare in modo che venga schierata il prima possibile una formazione adeguata.",
+   "id": "art-6-1"
+  },
+  {
+   "num": "6.2",
+   "title": "Situazioni extra regolamento",
+   "body": "Qualsiasi situazione non specificata nel presente regolamento verrà valutata e regolamentata ufficialmente tramite modifica scritta al regolamento stesso.\n\nIl Commissioner si riserva la possibilità di chiedere consigli ad altri GM ma la decisione finale su eventuali dispute o modifiche del regolamento rimane sua.",
+   "id": "art-6-2"
+  },
+  {
+   "num": "6.3",
+   "title": "Sito Internet",
+   "body": "Tutti i file necessari allo svolgimento del FantaNBA sono reperibili, previa autorizzazione da richiedere al Commissioner, al seguente link:\n\nhttps://drive.google.com/drive/folders/1ILwJZOzYcJtTCTARqoNkJgTSYIA7MzJV",
+   "id": "art-6-3"
+  }
+ ]
+}

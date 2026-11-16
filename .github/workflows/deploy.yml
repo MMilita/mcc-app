@@ -1,0 +1,31 @@
+name: Deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/260909537293/locations/global/workloadIdentityPools/github/providers/github
+          service_account: mcc-sync@my-project-1516274864079.iam.gserviceaccount.com
+          token_format: access_token
+      - run: node scripts/deploy-hosting.mjs
+        env:
+          FIRESTORE_TOKEN: ${{ steps.auth.outputs.access_token }}

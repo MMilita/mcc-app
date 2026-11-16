@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+__pycache__/
+test-results/
+test-report/
+test-screens/
+e2e/
+.local.json
+.env*
+*.pem
+*.key
+service-account*.json

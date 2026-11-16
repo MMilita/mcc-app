@@ -1,0 +1,61 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function isAdmin() {
+      return signedIn() &&
+        request.auth.token.email in get(/databases/$(database)/documents/config/admins).data.emails;
+    }
+    // membro della lega = GM con franchigia assegnata oppure Commissioner (non basta un account Google qualsiasi)
+    function member() {
+      return isAdmin() || (signedIn() && exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('franchiseId', null) != null);
+    }
+    function myFranchise() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.franchiseId;
+    }
+
+    // Dati pubblici (landing): leggibili da tutti, modificabili solo dal Commissioner
+    match /config/app { allow read: if true; allow write: if isAdmin(); }
+    // elenchi email: solo il Commissioner (le regole li leggono comunque con get())
+    match /config/admins { allow read: if isAdmin(); allow write: if isAdmin(); }
+    match /config/gmEmails { allow read: if isAdmin(); allow write: if isAdmin(); }
+    // invito del singolo GM: lo legge solo il titolare di quella email
+    match /invites/{email} { allow read: if signedIn() && request.auth.token.email.lower() == email; allow write: if isAdmin(); }
+    match /league/{doc} { allow read: if true; allow write: if isAdmin(); }
+    match /franchises/{id} { allow read: if true; allow write: if isAdmin(); }
+
+    // Giocatori sincronizzati da Dunkest (scrive solo il job di sync / admin)
+    match /players/{doc} { allow read: if true; allow write: if isAdmin(); }
+    match /playerlog/{doc} { allow read: if true; allow write: if isAdmin(); }
+
+    // Profili utente: ognuno crea/legge il proprio, la franchigia la assegna il Commissioner
+    match /users/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isAdmin());
+      allow list: if isAdmin();
+      // alla creazione il profilo può ricevere la franchigia pre-assegnata dal Commissioner (config/gmEmails)
+      allow create: if signedIn() && request.auth.uid == uid &&
+        (!('franchiseId' in request.resource.data) ||
+         request.resource.data.franchiseId == get(/databases/$(database)/documents/config/gmEmails).data.map[request.auth.token.email]);
+      allow update: if isAdmin() ||
+        (signedIn() && request.auth.uid == uid &&
+         !request.resource.data.diff(resource.data).affectedKeys().hasAny(['franchiseId', 'role']));
+    }
+
+    // Calendario/risultati/formazioni H2H importati da Dunkest: visibili ai GM loggati, scrive solo il sync/admin
+    match /h2h/{doc} { allow read: if member(); allow write: if isAdmin(); }
+
+    // Formazioni: tutti gli utenti loggati le vedono, le modifica il GM della squadra o il Commissioner
+    match /lineups/{franchiseId} {
+      allow read: if member();
+      allow write: if isAdmin() || (signedIn() && myFranchise() == franchiseId);
+      // storico dei salvataggi: solo aggiunte, con l'orario del server, mai modifiche o cancellazioni
+      match /history/{entry} {
+        allow read: if member();
+        allow create: if signedIn() && (isAdmin() || myFranchise() == franchiseId) && request.resource.data.savedAt == request.time;
+        allow update, delete: if false;
+      }
+    }
+  }
+}

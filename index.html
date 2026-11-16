@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Milano City Championship · FantaNBA</title>
+    <meta name="description" content="Il FantaNBA dei quartieri di Milano dal 2016: 16 franchigie, formazioni, rose, contratti, classifica, albo d'oro e statistiche Dunkest." />
+    <meta name="application-name" content="MCC" />
+    <meta name="author" content="Milano City Championship" />
+    <meta name="robots" content="index, follow" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="https://milano-city-championship.web.app/" />
+    <!-- Anteprima link (WhatsApp, Telegram, Facebook, iMessage) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Milano City Championship" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:url" content="https://milano-city-championship.web.app/" />
+    <meta property="og:title" content="Milano City Championship · FantaNBA dal 2016" />
+    <meta property="og:description" content="16 franchigie dei quartieri di Milano: formazioni, rose, contratti, classifica e statistiche Dunkest. Installa l'app sul telefono." />
+    <meta property="og:image" content="https://milano-city-championship.web.app/og-mcc.jpg" />
+    <meta property="og:image:secure_url" content="https://milano-city-championship.web.app/og-mcc.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Logo Milano City Championship" />
+    <meta property="og:image" content="https://milano-city-championship.web.app/og-mcc-square.jpg" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="800" />
+    <!-- X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Milano City Championship · FantaNBA dal 2016" />
+    <meta name="twitter:description" content="16 franchigie dei quartieri di Milano: formazioni, rose, contratti e statistiche Dunkest." />
+    <meta name="twitter:image" content="https://milano-city-championship.web.app/og-mcc.jpg" />
+    <meta name="theme-color" content="#022048" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-TileColor" content="#022048" />
+    <meta name="apple-mobile-web-app-title" content="MCC" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/icons/favicon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Manrope:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="splash" aria-label="Caricamento Milano City Championship">
+      <img src="/brand/mcc-logo-240.webp" alt="" width="148" height="181" />
+    </div>
+    <style>
+      #splash { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; background: radial-gradient(60% 50% at 50% 45%, #ffffff 0%, #eef2f8 70%, #dfe6f1 100%); transition: opacity .45s ease, visibility .45s; }
+      #splash img { width: 148px; height: auto; animation: mcc-beat 1.15s ease-in-out infinite; filter: drop-shadow(0 10px 24px rgba(2, 32, 72, .28)); }
+      #splash.hide { opacity: 0; visibility: hidden; }
+      @keyframes mcc-beat { 0%, 100% { transform: scale(1); } 14% { transform: scale(1.12); } 28% { transform: scale(1); } 42% { transform: scale(1.08); } 70% { transform: scale(1); } }
+      @media (prefers-color-scheme: dark) { #splash { background: radial-gradient(60% 50% at 50% 45%, #0d2f5f 0%, #041a38 70%, #020f22 100%); } #splash img { filter: drop-shadow(0 0 28px rgba(255, 255, 255, .25)); } }
+      @media (prefers-reduced-motion: reduce) { #splash img { animation: none; } }
+    </style>
+    <script>
+      // la schermata di avvio con il logo compare solo al primo caricamento della sessione
+      try { if (sessionStorage.getItem('mcc-splash')) document.getElementById('splash').remove(); else sessionStorage.setItem('mcc-splash', '1'); } catch (e) {}
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

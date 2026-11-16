@@ -1,0 +1,30 @@
+{
+  "season": "2026/27",
+  "source": "Dunkest · Milano City Championship XI",
+  "matchday": 10,
+  "rows": [
+    {"team": "San Gimignano Junkyard Dogs", "w": 9, "l": 1, "fpt": 1981.44},
+    {"team": "Giambellino Green Leaves", "w": 8, "l": 2, "fpt": 2627.33},
+    {"team": "Tolstoj Bum Boomers", "w": 7, "l": 3, "fpt": 2087.06},
+    {"team": "Arzaga Grinders", "w": 7, "l": 3, "fpt": 1834.97},
+    {"team": "Parabiago Beach Delirio 69ers", "w": 6, "l": 4, "fpt": 2020.06},
+    {"team": "Foppa Fresh Waves", "w": 6, "l": 4, "fpt": 1916.35},
+    {"team": "Misurata Codfish", "w": 6, "l": 4, "fpt": 1865.48},
+    {"team": "Gianella Street Stoners", "w": 6, "l": 4, "fpt": 1807.52},
+    {"team": "Don Gnocchi Twin Towers", "w": 5, "l": 5, "fpt": 1634.08},
+    {"team": "Monterrey Narcos", "w": 4, "l": 6, "fpt": 1887.72},
+    {"team": "Capecelatro Red Lights", "w": 4, "l": 6, "fpt": 1728.0},
+    {"team": "Vespri Runners", "w": 4, "l": 6, "fpt": 1698.07},
+    {"team": "Baggio Stabbers", "w": 4, "l": 6, "fpt": 1625.64},
+    {"team": "Foppa Swords", "w": 2, "l": 8, "fpt": 1534.81},
+    {"team": "Arzaga Jazz", "w": 1, "l": 9, "fpt": 1450.12},
+    {"team": "San Siro Enjoint", "w": 1, "l": 9, "fpt": 1371.82}
+  ],
+  "liveMatchday": [
+    {"home": "Tolstoj Bum Boomers", "hs": 160.85, "away": "San Siro Enjoint", "as": 117.85},
+    {"home": "Giambellino Green Leaves", "hs": 234.91, "away": "Misurata Codfish", "as": 186.85},
+    {"home": "Baggio Stabbers", "hs": 182.51, "away": "Capecelatro Red Lights", "as": 128.94},
+    {"home": "Arzaga Jazz", "hs": 149.8, "away": "Parabiago Beach Delirio 69ers", "as": 242.61},
+    {"home": "Arzaga Grinders", "hs": 145.77, "away": "San Gimignano Junkyard Dogs", "as": 155.1}
+  ]
+}

@@ -1,0 +1,2266 @@
+[
+ {
+  "id": "arzaga-grinders",
+  "name": "Arzaga Grinders",
+  "gm": "Daniele Trabucchi",
+  "quartiere": "Bande Nere",
+  "zona": "Zona 6",
+  "founded": 2018,
+  "arena": "Grinderdome (Largo Primaticcio, Primaticcio)",
+  "colors": "Blu, Giallo",
+  "names": [
+   "Arzaga Grinders (2018-oggi)"
+  ],
+  "palmares": [
+   "1 Titolo MCC (2025)",
+   "2 Regular Season (2019, 2025)",
+   "2 In-Season Tournament (2025, 2026)"
+  ],
+  "awards": {
+   "DPY": [
+    "Evan Mobley (2025)"
+   ],
+   "6MY": [
+    "Malcolm Brogdon (2023)"
+   ],
+   "MIP": [
+    "Paskal Siakam (2019)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Keyonte George",
+    "team": "UTA",
+    "salaries": {
+     "2023/2024": 6.0,
+     "2024/2025": 6.0,
+     "2025/2026": 7.0,
+     "2026/2027": 7.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Ajay Mitchell",
+    "team": "OKC",
+    "salaries": {
+     "2025/2026": 7.8,
+     "2026/2027": 11.7
+    },
+    "role": "G"
+   },
+   {
+    "name": "VJ Edgecombe",
+    "team": "PHI",
+    "salaries": {
+     "2025/2026": 9.0,
+     "2026/2027": 10.0,
+     "2027/2028": 11.0,
+     "2028/2029": 12.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Trae Young",
+    "team": "WAS",
+    "salaries": {
+     "2025/2026": 17.0,
+     "2026/2027": 15.5
+    },
+    "role": "G"
+   },
+   {
+    "name": "Jalen Johnson",
+    "team": "ATL",
+    "salaries": {
+     "2025/2026": 13.5,
+     "2026/2027": 20.3
+    },
+    "role": "A"
+   },
+   {
+    "name": "Asa Newell",
+    "team": "ATL",
+    "salaries": {
+     "2025/2026": 5.0,
+     "2026/2027": 5.0,
+     "2027/2028": 6.0,
+     "2028/2029": 6.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "AJ Dybantsa",
+    "team": "WAS",
+    "salaries": {
+     "2026/2027": 10.0,
+     "2027/2028": 11.0,
+     "2028/2029": 12.0,
+     "2029/2030": 13.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Miles Bridges",
+    "team": "PHX",
+    "salaries": {
+     "2026/2027": 11.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Ryan Kalkbrenner",
+    "team": "CHA",
+    "salaries": {
+     "2025/2026": 4.0,
+     "2026/2027": 4.0,
+     "2027/2028": 5.0,
+     "2028/2029": 5.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Jalen Duren",
+    "team": "DET",
+    "salaries": {
+     "2026/2027": 14.5,
+     "2027/2028": 21.8
+    },
+    "role": "C"
+   },
+   {
+    "name": "Day'ron Sharpe",
+    "team": "BKN",
+    "salaries": {
+     "2026/2027": 8.5
+    },
+    "role": "C"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 119.1,
+   "2024/2025": 149.5,
+   "2025/2026": 117.8,
+   "2026/2027": 117.5
+  },
+  "logo": "/logos/arzaga-grinders.webp"
+ },
+ {
+  "id": "arzaga-jazz",
+  "name": "Arzaga Jazz",
+  "gm": "Valerio Camagni",
+  "quartiere": null,
+  "zona": null,
+  "founded": 2016,
+  "arena": null,
+  "colors": null,
+  "names": [
+   "Gambara Jazz (2016-2020)",
+   "Arzaga Jazz (2020-oggi)"
+  ],
+  "palmares": [],
+  "awards": {
+   "ROY": [
+    "Ben Simmons (2018)",
+    "Paolo Banchero (2023)"
+   ],
+   "MIP": [
+    "Julius Randle (2021)"
+   ],
+   "CPY": [
+    "Jalen Brunson (2025)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Jalen Brunson",
+    "team": "NYK",
+    "salaries": {
+     "2024/2025": 15.5,
+     "2025/2026": 23.3,
+     "2026/2027": 23.3
+    },
+    "role": "G"
+   },
+   {
+    "name": "Jase Richardson",
+    "team": "ORL",
+    "salaries": {
+     "2025/2026": 5.0,
+     "2026/2027": 5.0,
+     "2027/2028": 6.0,
+     "2028/2029": 6.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Darryn Peterson",
+    "team": "UTA",
+    "salaries": {
+     "2026/2027": 9.0,
+     "2027/2028": 10.0,
+     "2028/2029": 11.0,
+     "2029/2030": 12.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Alex Caruso",
+    "team": "OKC",
+    "salaries": {
+     "2026/2027": 6.6
+    },
+    "role": "G"
+   },
+   {
+    "name": "Brandon Miller",
+    "team": "CHA",
+    "salaries": {
+     "2023/2024": 9.0,
+     "2024/2025": 10.0,
+     "2025/2026": 11.0,
+     "2026/2027": 12.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Cody Williams",
+    "team": "MIN",
+    "salaries": {
+     "2024/2025": 7.0,
+     "2025/2026": 7.0,
+     "2026/2027": 8.0,
+     "2027/2028": 9.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Andrew Wiggins",
+    "team": "MIA",
+    "salaries": {
+     "2026/2027": 10.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Brandon Ingram",
+    "team": "LAC",
+    "salaries": {
+     "2026/2027": 10.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Alperen Sengun",
+    "team": "HOU",
+    "salaries": {
+     "2025/2026": 17.0,
+     "2026/2027": 25.5
+    },
+    "role": "C"
+   },
+   {
+    "name": "Jacob Poeltl",
+    "team": "TOR",
+    "salaries": {
+     "2026/2027": 9.5
+    },
+    "role": "C"
+   }
+  ],
+  "cut": [],
+  "injured": [
+   {
+    "name": "Ben Simmons",
+    "team": "SAC",
+    "salaries": {
+     "2026/2027": 0.6
+    }
+   }
+  ],
+  "capTotals": {
+   "2023/2024": 117.6,
+   "2024/2025": 118.6,
+   "2025/2026": 119.8,
+   "2026/2027": 120.0
+  },
+  "logo": "/logos/arzaga-jazz.webp"
+ },
+ {
+  "id": "baggio-stabbers",
+  "name": "Baggio Stabbers",
+  "gm": "Stefano Dalessandro",
+  "quartiere": "Baggio",
+  "zona": "Zona 7",
+  "founded": 2016,
+  "arena": "Stabbers Arena (Viale Caterina da Forlì 19, Bande Nere)",
+  "colors": "Nero, Rosso Porpora, Oro",
+  "names": [
+   "Baggio Stabbers (2016-oggi)"
+  ],
+  "palmares": [
+   "1 Titolo MCC (2021)",
+   "2 Regular Season (2024, 2026)",
+   "1 Playout (2023)"
+  ],
+  "awards": {
+   "MVP": [
+    "Nikola Jokic (2024)"
+   ],
+   "DPY": [
+    "Jaren Jackson Jr (2023)"
+   ],
+   "MIP": [
+    "Lauri Markkanen (2023)"
+   ],
+   "COY": [
+    "Mike D'Antoni (2017)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Amen Thompson",
+    "team": "HOU",
+    "salaries": {
+     "2023/2024": 8.0,
+     "2024/2025": 8.0,
+     "2025/2026": 9.0,
+     "2026/2027": 10.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Josh Giddey",
+    "team": "CHI",
+    "salaries": {
+     "2025/2026": 13.5,
+     "2026/2027": 20.3
+    },
+    "role": "G"
+   },
+   {
+    "name": "Dylan Harper",
+    "team": "SAS",
+    "salaries": {
+     "2025/2026": 9.0,
+     "2026/2027": 10.0,
+     "2027/2028": 11.0,
+     "2028/2029": 12.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Anthony Black",
+    "team": "ORL",
+    "salaries": {
+     "2026/2027": 7.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Noah Clowney",
+    "team": "BKN",
+    "salaries": {
+     "2024/2025": 4.5,
+     "2025/2026": 6.8,
+     "2026/2027": 9.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Toumani Camara",
+    "team": "POR",
+    "salaries": {
+     "2025/2026": 9.0,
+     "2026/2027": 9.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Kyshawn George",
+    "team": "WAS",
+    "salaries": {
+     "2025/2026": 6.0,
+     "2026/2027": 9.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Trey Murphy III",
+    "team": "NOP",
+    "salaries": {
+     "2026/2027": 11.5,
+     "2027/2028": 17.3
+    },
+    "role": "A"
+   },
+   {
+    "name": "Kel'el Ware",
+    "team": "MIL",
+    "salaries": {
+     "2024/2025": 6.0,
+     "2025/2026": 6.0,
+     "2026/2027": 7.0,
+     "2027/2028": 7.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Nicolas Claxton",
+    "team": "CHI",
+    "salaries": {
+     "2026/2027": 9.5
+    },
+    "role": "C"
+   },
+   {
+    "name": "Meleek Thomas",
+    "team": "CLE",
+    "salaries": {
+     "2026/2027": 4.0,
+     "2027/2028": 4.0,
+     "2028/2029": 5.0,
+     "2029/2030": 5.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Maxime Rainaud",
+    "team": "SAC",
+    "salaries": {
+     "2026/2027": 10.0,
+     "2027/2028": 15.0
+    },
+    "role": "C"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 117.8,
+   "2024/2025": 149.7,
+   "2025/2026": 146.6,
+   "2026/2027": 116.8
+  },
+  "logo": "/logos/baggio-stabbers.webp"
+ },
+ {
+  "id": "capecelatro-red-lights",
+  "name": "Capecelatro Red Lights",
+  "gm": "Marco Milita",
+  "quartiere": "San Siro",
+  "zona": "Zona 7",
+  "founded": 2018,
+  "arena": "Francesco Totti Arena (Via Fratelli Zoia 23, San Siro)",
+  "colors": "Giallo, Rosso",
+  "names": [
+   "Besenzanica Red Lights (2018-2021)",
+   "Chinotto Red Lights (2021-2026)",
+   "Capecelatro Red Lights (2026-oggi)"
+  ],
+  "palmares": [
+   "1 Playout (2019)"
+  ],
+  "awards": {
+   "MVP": [
+    "Giannis Antetokounmpo (2020)"
+   ],
+   "DPY": [
+    "Giannis Antetokounmpo (2020)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Jamal Murray",
+    "team": "DEN",
+    "salaries": {
+     "2025/2026": 12.0,
+     "2026/2027": 14.5
+    },
+    "role": "G"
+   },
+   {
+    "name": "Donovan Mitchell",
+    "team": "CLE",
+    "salaries": {
+     "2026/2027": 14.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Immanuel Quickley",
+    "team": "TOR",
+    "salaries": {
+     "2026/2027": 10.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Brandin Podziemski",
+    "team": "GSW",
+    "salaries": {
+     "2026/2027": 10.5
+    },
+    "role": "G"
+   },
+   {
+    "name": "Zion Williamson",
+    "team": "NOP",
+    "salaries": {
+     "2025/2026": 13.0,
+     "2026/2027": 19.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Carter Bryant",
+    "team": "SAS",
+    "salaries": {
+     "2025/2026": 6.0,
+     "2026/2027": 6.0,
+     "2027/2028": 7.0,
+     "2028/2029": 7.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Jabari Smith Jr",
+    "team": "HOU",
+    "salaries": {
+     "2026/2027": 10.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Karim Lopez",
+    "team": "MEM",
+    "salaries": {
+     "2026/2027": 5.0,
+     "2027/2028": 5.0,
+     "2028/2029": 6.0,
+     "2029/2030": 6.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Rudy Gobert",
+    "team": "MIN",
+    "salaries": {
+     "2026/2027": 11.5
+    },
+    "role": "C"
+   },
+   {
+    "name": "Nikola Vucevic",
+    "team": "ORL",
+    "salaries": {
+     "2026/2027": 10.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Daniel Gafford",
+    "team": "DAL",
+    "salaries": {
+     "2026/2027": 9.4
+    },
+    "role": "C"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 149.1,
+   "2024/2025": 122.6,
+   "2025/2026": 148.3,
+   "2026/2027": 120.9
+  },
+  "logo": "/logos/capecelatro-red-lights.webp"
+ },
+ {
+  "id": "don-gnocchi-twin-towers",
+  "name": "Don Gnocchi Twin Towers",
+  "gm": "Marco Azzalin",
+  "quartiere": "San Siro",
+  "zona": "Zona 7",
+  "founded": 2016,
+  "arena": "San Siro Tower Garden (Via Fleming 13, San Siro)",
+  "colors": "Blu, Rosso, Bianco",
+  "names": [
+   "Gaggiano City Storms (2016-2018)",
+   "Don Gnocchi Rivers (2018-2020)",
+   "Don Gnocchi Twin Towers (2026-oggi)"
+  ],
+  "palmares": [],
+  "awards": {
+   "6MY": [
+    "Montrezl Harrell (2020)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Jeremiah Fears",
+    "team": "NOP",
+    "salaries": {
+     "2025/2026": 7.0,
+     "2026/2027": 7.0,
+     "2027/2028": 8.0,
+     "2028/2029": 9.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Darius Acuff Jr",
+    "team": "SAC",
+    "salaries": {
+     "2026/2027": 7.0,
+     "2027/2028": 7.0,
+     "2028/2029": 8.0,
+     "2029/2030": 9.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "James Harden",
+    "team": "CLE",
+    "salaries": {
+     "2026/2027": 14.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Ben Sheppard",
+    "team": "IND",
+    "salaries": {
+     "2026/2027": 5.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Scottie Barnes",
+    "team": "TOR",
+    "salaries": {
+     "2025/2026": 12.5,
+     "2026/2027": 18.8
+    },
+    "role": "A"
+   },
+   {
+    "name": "Anthony Davis",
+    "team": "WAS",
+    "salaries": {
+     "2024/2025": 22.5,
+     "2025/2026": 33.8,
+     "2026/2027": 33.8
+    },
+    "role": "A"
+   },
+   {
+    "name": "Mikal Bridges",
+    "team": "NYK",
+    "salaries": {
+     "2026/2027": 9.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Koa Peat",
+    "team": "PHX",
+    "salaries": {
+     "2026/2027": 5.0,
+     "2027/2028": 5.0,
+     "2028/2029": 6.0,
+     "2029/2030": 6.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Bam Adebayo",
+    "team": "MIA",
+    "salaries": {
+     "2026/2027": 15.0,
+     "2027/2028": 22.5
+    },
+    "role": "C"
+   },
+   {
+    "name": "Kevon Looney",
+    "team": "LAL",
+    "salaries": {
+     "2026/2027": 4.5
+    },
+    "role": "C"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 119.7,
+   "2024/2025": 117.5,
+   "2025/2026": 113.8,
+   "2026/2027": 119.6
+  },
+  "logo": "/logos/don-gnocchi-twin-towers.webp"
+ },
+ {
+  "id": "foppa-fresh-waves",
+  "name": "Foppa Fresh Waves",
+  "gm": "Leonardo Agapito",
+  "quartiere": "Solari",
+  "zona": "Zona 6",
+  "founded": 2016,
+  "arena": "Solari Fresh Court (Via Stendhal, Solari)",
+  "colors": "Turchese, Bianco, Arancione",
+  "names": [
+   "Foppa Fresh Waves (2016-oggi)"
+  ],
+  "palmares": [],
+  "awards": {},
+  "roster": [
+   {
+    "name": "LaMelo Ball",
+    "team": "MIN",
+    "salaries": {
+     "2026/2027": 14.5,
+     "2027/2028": 21.8
+    },
+    "role": "G"
+   },
+   {
+    "name": "Dyson Daniels",
+    "team": "ATL",
+    "salaries": {
+     "2026/2027": 12.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Keaton Wagler",
+    "team": "LAC",
+    "salaries": {
+     "2026/2027": 8.0,
+     "2027/2028": 8.0,
+     "2028/2029": 9.0,
+     "2029/2030": 10.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Cason Wallace",
+    "team": "OKC",
+    "salaries": {
+     "2026/2027": 8.5
+    },
+    "role": "G"
+   },
+   {
+    "name": "Jaylen Wells",
+    "team": "MEM",
+    "salaries": {
+     "2024/2025": 4.0,
+     "2025/2026": 4.0,
+     "2026/2027": 5.0,
+     "2027/2028": 5.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Giannis Antetokounmpo",
+    "team": "MIA",
+    "salaries": {
+     "2025/2026": 25.0,
+     "2026/2027": 37.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Rasheer Fleming",
+    "team": "PHX",
+    "salaries": {
+     "2025/2026": 4.0,
+     "2026/2027": 4.0,
+     "2027/2028": 5.0,
+     "2028/2029": 5.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Naz Reid",
+    "team": "CHA",
+    "salaries": {
+     "2026/2027": 10.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Alexandre Sarr",
+    "team": "WAS",
+    "salaries": {
+     "2024/2025": 9.0,
+     "2025/2026": 10.0,
+     "2026/2027": 11.0,
+     "2027/2028": 12.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Zach Edey",
+    "team": "MEM",
+    "salaries": {
+     "2024/2025": 7.0,
+     "2025/2026": 7.0,
+     "2026/2027": 8.0,
+     "2027/2028": 9.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Sidy Cissoko",
+    "team": "POR",
+    "salaries": {
+     "2026/2027": 4.7
+    },
+    "role": "G"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 115.7,
+   "2024/2025": 145.9,
+   "2025/2026": 117.2,
+   "2026/2027": 123.2
+  },
+  "logo": "/logos/foppa-fresh-waves.webp"
+ },
+ {
+  "id": "foppa-swords",
+  "name": "Foppa Swords",
+  "gm": "Paolo Brenna",
+  "quartiere": null,
+  "zona": null,
+  "founded": 2016,
+  "arena": null,
+  "colors": null,
+  "names": [
+   "Bolivar Swords (2016-2021)",
+   "Foppa Swords (2021-oggi)"
+  ],
+  "palmares": [
+   "1 Titolo MCC (2024)"
+  ],
+  "awards": {
+   "6MY": [
+    "Payton Pritchard (2025)"
+   ],
+   "CPY": [
+    "De'Aaron Fox (2023)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Mikel Brown Jr",
+    "team": "BKN",
+    "salaries": {
+     "2026/2027": 7.0,
+     "2027/2028": 7.0,
+     "2028/2029": 8.0,
+     "2029/2030": 9.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Payton Pritchard",
+    "team": "BOS",
+    "salaries": {
+     "2026/2027": 11.5,
+     "2027/2028": 17.3
+    },
+    "role": "G"
+   },
+   {
+    "name": "De'Aaron Fox",
+    "team": "SAS",
+    "salaries": {
+     "2026/2027": 11.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Max Strus",
+    "team": "LAC",
+    "salaries": {
+     "2026/2027": 6.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Jaylen Brown",
+    "team": "PHI",
+    "salaries": {
+     "2025/2026": 15.0,
+     "2026/2027": 14.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Noa Essengue",
+    "team": "CHI",
+    "salaries": {
+     "2025/2026": 6.0,
+     "2026/2027": 6.0,
+     "2027/2028": 7.0,
+     "2028/2029": 7.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Paolo Banchero",
+    "team": "ORL",
+    "salaries": {
+     "2026/2027": 14.0,
+     "2027/2028": 21.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Kawhi Leonard",
+    "team": "TOR",
+    "salaries": {
+     "2026/2027": 15.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Jarrett Allen",
+    "team": "CLE",
+    "salaries": {
+     "2025/2026": 14.5,
+     "2026/2027": 21.8
+    },
+    "role": "C"
+   },
+   {
+    "name": "Wendell Carter Jr",
+    "team": "ORL",
+    "salaries": {
+     "2025/2026": 9.0,
+     "2026/2027": 13.5
+    },
+    "role": "C"
+   },
+   {
+    "name": "Ty Jerome",
+    "team": "MEM",
+    "salaries": {
+     "2026/2027": 8.1
+    },
+    "role": "G"
+   },
+   {
+    "name": "PJ Washington",
+    "team": "DAL",
+    "salaries": {
+     "2026/2027": 9.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Mitchell Robinson",
+    "team": "BOS",
+    "salaries": {
+     "2026/2027": 6.5
+    },
+    "role": "C"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 149.6,
+   "2024/2025": 115.6,
+   "2025/2026": 119.7,
+   "2026/2027": 143.9
+  },
+  "logo": "/logos/foppa-swords.webp"
+ },
+ {
+  "id": "giambellino-green-leaves",
+  "name": "Giambellino Green Leaves",
+  "gm": "Daniele Ghisletti",
+  "quartiere": "Giambellino",
+  "zona": "Zona 6",
+  "founded": 2016,
+  "arena": "Fresh Mill Arena (Largo Giambellino, Giambellino)",
+  "colors": "Verde, Rosa",
+  "names": [
+   "Giambellino Green Leaves (2016-oggi)"
+  ],
+  "palmares": [
+   "1 Regular Season (2022)",
+   "2 Playout (2024, 2026)"
+  ],
+  "awards": {
+   "DPY": [
+    "Victor Wembanyama (2026)"
+   ],
+   "ROY": [
+    "Malcolm Brogdon (2017)",
+    "Victor Wembanyama (2024)"
+   ],
+   "6MY": [
+    "Jordan Clarkson (2021)"
+   ],
+   "MIP": [
+    "Nickeil Alexander-Walker (2026)"
+   ],
+   "CPY": [
+    "Stephen Curry (2024)"
+   ],
+   "COY": [
+    "Mike Budenholzer (2019)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Darius Garland",
+    "team": "LAC",
+    "salaries": {
+     "2026/2027": 13.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Derrick White",
+    "team": "BOS",
+    "salaries": {
+     "2026/2027": 10.5
+    },
+    "role": "G"
+   },
+   {
+    "name": "Andrew Nembhard",
+    "team": "IND",
+    "salaries": {
+     "2026/2027": 10.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Brayden Burries",
+    "team": "MIL",
+    "salaries": {
+     "2026/2027": 7.0,
+     "2027/2028": 7.0,
+     "2028/2029": 8.0,
+     "2029/2030": 9.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "RJ Barrett",
+    "team": "TOR",
+    "salaries": {
+     "2025/2026": 9.0,
+     "2026/2027": 10.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Ausar Thompson",
+    "team": "DET",
+    "salaries": {
+     "2025/2026": 8.9,
+     "2026/2027": 13.4
+    },
+    "role": "A"
+   },
+   {
+    "name": "Franz Wagner",
+    "team": "ORL",
+    "salaries": {
+     "2025/2026": 11.5,
+     "2026/2027": 17.3
+    },
+    "role": "A"
+   },
+   {
+    "name": "Collin Murray-Boyles",
+    "team": "TOR",
+    "salaries": {
+     "2025/2026": 7.0,
+     "2026/2027": 7.0,
+     "2027/2028": 8.0,
+     "2028/2029": 9.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Victor Wembanyama",
+    "team": "SAS",
+    "salaries": {
+     "2023/2024": 10.0,
+     "2024/2025": 11.0,
+     "2025/2026": 12.0,
+     "2026/2027": 13.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Nikola Jokic",
+    "team": "DEN",
+    "salaries": {
+     "2026/2027": 30.0
+    },
+    "role": "C"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 118.9,
+   "2024/2025": 148.7,
+   "2025/2026": 118.9,
+   "2026/2027": 131.2
+  },
+  "logo": "/logos/giambellino-green-leaves.webp"
+ },
+ {
+  "id": "gianella-street-stoners",
+  "name": "Gianella Street Stoners",
+  "gm": "Pietro Regina",
+  "quartiere": "Baggio",
+  "zona": "Zona 7",
+  "founded": 2016,
+  "arena": "Kiwi Centre (Via Anselmo da Baggio 55, Baggio)",
+  "colors": "Giallo, Blu",
+  "names": [
+   "Baggio Thieves (2016-2017)",
+   "Rismondo Street Stoners (2017-2024)",
+   "Gianella Street Stoners (2024-oggi)"
+  ],
+  "palmares": [
+   "1 Titolo MCC (2023)"
+  ],
+  "awards": {
+   "MVP": [
+    "Nikola Jokic (2022)"
+   ],
+   "ROY": [
+    "Ja Morant (2020)",
+    "LaMelo Ball (2021)",
+    "Scottie Barnes (2022)"
+   ],
+   "MIP": [
+    "Brandon Ingram (2020)",
+    "Ja Morant (2022)",
+    "Dyson Daniels (2025)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Bilal Coulibaly",
+    "team": "WAS",
+    "salaries": {
+     "2023/2024": 7.0,
+     "2024/2025": 7.0,
+     "2025/2026": 8.0,
+     "2026/2027": 9.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Kon Knueppel",
+    "team": "CHA",
+    "salaries": {
+     "2025/2026": 8.0,
+     "2026/2027": 8.0,
+     "2027/2028": 9.0,
+     "2028/2029": 10.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Cameron Carr",
+    "team": "LAL",
+    "salaries": {
+     "2026/2027": 5.0,
+     "2027/2028": 5.0,
+     "2028/2029": 6.0,
+     "2029/2030": 6.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Damian Lillard",
+    "team": "POR",
+    "salaries": {
+     "2026/2027": 13.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Danny Wolf",
+    "team": "BKN",
+    "salaries": {
+     "2025/2026": 5.0,
+     "2026/2027": 5.0,
+     "2027/2028": 6.0,
+     "2028/2029": 6.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Jayson Tatum",
+    "team": "BOS",
+    "salaries": {
+     "2026/2027": 18.0,
+     "2027/2028": 27.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "LeBron James",
+    "team": "PHI",
+    "salaries": {
+     "2026/2027": 16.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "DeMar DeRozan",
+    "team": "DEN",
+    "salaries": {
+     "2026/2027": 9.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Karl-Anthony Towns",
+    "team": "NYK",
+    "salaries": {
+     "2024/2025": 16.5,
+     "2025/2026": 24.8,
+     "2026/2027": 24.8
+    },
+    "role": "C"
+   },
+   {
+    "name": "Moussa Diabate",
+    "team": "CHA",
+    "salaries": {
+     "2025/2026": 7.0,
+     "2026/2027": 10.5
+    },
+    "role": "C"
+   },
+   {
+    "name": "Jared McCain",
+    "team": "OKC",
+    "salaries": {
+     "2026/2027": 6.4
+    },
+    "role": "G"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 117.4,
+   "2024/2025": 140.6,
+   "2025/2026": 117.9,
+   "2026/2027": 124.7
+  },
+  "logo": "/logos/gianella-street-stoners.webp"
+ },
+ {
+  "id": "misurata-codfish",
+  "name": "Misurata Codfish",
+  "gm": "Andrea de Angeli",
+  "quartiere": "Lorenteggio",
+  "zona": "Zona 6",
+  "founded": 2016,
+  "arena": "Arena Ezio Greggio (Via Donati, Lorenteggio)",
+  "colors": "Arancio, Blu",
+  "names": [
+   "Via Barce Codfish (2016-2017)",
+   "Moncalvo Codfish (2017-2019)",
+   "Misurata Codfish (2019-oggi)"
+  ],
+  "palmares": [
+   "1 Regular Season (2020)"
+  ],
+  "awards": {
+   "ROY": [
+    "Luka Doncic (2019)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Reed Sheppard",
+    "team": "HOU",
+    "salaries": {
+     "2024/2025": 9.0,
+     "2025/2026": 10.0,
+     "2026/2027": 11.0,
+     "2027/2028": 12.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Cade Cunningham",
+    "team": "DET",
+    "salaries": {
+     "2025/2026": 16.5,
+     "2026/2027": 24.8
+    },
+    "role": "G"
+   },
+   {
+    "name": "Shai Gilgeous-Alexander",
+    "team": "OKC",
+    "salaries": {
+     "2026/2027": 22.0,
+     "2027/2028": 33.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Kingston Flemings",
+    "team": "ATL",
+    "salaries": {
+     "2026/2027": 7.0,
+     "2027/2028": 7.0,
+     "2028/2029": 8.0,
+     "2029/2030": 9.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Jaime Jaquez Jr",
+    "team": "MIL",
+    "salaries": {
+     "2023/2024": 6.0,
+     "2024/2025": 6.0,
+     "2025/2026": 7.0,
+     "2026/2027": 7.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Michael Porter Jr",
+    "team": "BKN",
+    "salaries": {
+     "2026/2027": 13.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Josh Hart",
+    "team": "NYK",
+    "salaries": {
+     "2026/2027": 12.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Mario Hezonja",
+    "team": "CLE",
+    "salaries": {
+     "2026/2027": 5.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Neemias Queta",
+    "team": "BOS",
+    "salaries": {
+     "2025/2026": 10.9,
+     "2026/2027": 11.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Khaman Maluach",
+    "team": "PHX",
+    "salaries": {
+     "2025/2026": 7.0,
+     "2026/2027": 7.0,
+     "2027/2028": 8.0,
+     "2028/2029": 9.0
+    },
+    "role": "C"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 119.8,
+   "2024/2025": 119.9,
+   "2025/2026": 120.0,
+   "2026/2027": 119.8
+  },
+  "logo": "/logos/misurata-codfish.webp"
+ },
+ {
+  "id": "monterrey-narcos",
+  "name": "Monterrey Narcos",
+  "gm": "Francesco Valeri",
+  "quartiere": "Porta Romana",
+  "zona": "Zona 4",
+  "founded": 2019,
+  "arena": "Rancho Cuccagna (Viale Lazio 25, Porta Romana)",
+  "colors": "Arancione, Verde Acqua",
+  "names": [
+   "Monterrey Buzzer Beaters (2019-2022)",
+   "Monterrey Narcos (2022-oggi)"
+  ],
+  "palmares": [],
+  "awards": {
+   "DPY": [
+    "Rudy Gobert (2021)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Nique Clifford",
+    "team": "OKC",
+    "salaries": {
+     "2025/2026": 5.0,
+     "2026/2027": 5.0,
+     "2027/2028": 6.0,
+     "2028/2029": 6.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Stephen Curry",
+    "team": "GSW",
+    "salaries": {
+     "2025/2026": 16.5,
+     "2026/2027": 24.8
+    },
+    "role": "G"
+   },
+   {
+    "name": "Egor Demin",
+    "team": "BKN",
+    "salaries": {
+     "2025/2026": 7.0,
+     "2026/2027": 7.0,
+     "2027/2028": 8.0,
+     "2028/2029": 9.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Tyrese Haliburton",
+    "team": "IND",
+    "salaries": {
+     "2026/2027": 14.5,
+     "2027/2028": 21.8,
+     "2028/2029": 29.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Matas Buzelis",
+    "team": "CHI",
+    "salaries": {
+     "2024/2025": 6.0,
+     "2025/2026": 6.0,
+     "2026/2027": 7.0,
+     "2027/2028": 7.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Ace Bailey",
+    "team": "UTA",
+    "salaries": {
+     "2025/2026": 8.0,
+     "2026/2027": 8.0,
+     "2027/2028": 9.0,
+     "2028/2029": 10.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Saddiq Bey",
+    "team": "NOP",
+    "salaries": {
+     "2025/2026": 8.3,
+     "2026/2027": 9.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Yaxel Lendeborg",
+    "team": "GSW",
+    "salaries": {
+     "2026/2027": 6.0,
+     "2027/2028": 6.0,
+     "2028/2029": 7.0,
+     "2029/2030": 7.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Dereck Lively II",
+    "team": "DAL",
+    "salaries": {
+     "2023/2024": 6.0,
+     "2024/2025": 6.0,
+     "2025/2026": 7.0,
+     "2026/2027": 7.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Joel Embiid",
+    "team": "PHI",
+    "salaries": {
+     "2026/2027": 18.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Kyrie Irving",
+    "team": "DAL",
+    "salaries": {
+     "2026/2027": 12.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Paul George",
+    "team": "BOS",
+    "salaries": {
+     "2026/2027": 11.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Yang Hansen",
+    "team": "POR",
+    "salaries": {
+     "2025/2026": 3.0,
+     "2026/2027": 3.0
+    },
+    "role": "?"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 149.0,
+   "2024/2025": 119.7,
+   "2025/2026": 117.7,
+   "2026/2027": 133.3
+  },
+  "logo": "/logos/monterrey-narcos.webp"
+ },
+ {
+  "id": "parabiago-beach-delirio-69ers",
+  "name": "Parabiago Beach Delirio 69ers",
+  "gm": "Marco Longhini",
+  "quartiere": "Comune di Parabiago",
+  "zona": "-",
+  "founded": 2016,
+  "arena": null,
+  "colors": null,
+  "names": [
+   "Parabiago Beach Delirio (2016-2020)",
+   "Parabiago Beach Delirio 69ers (2020-oggi)"
+  ],
+  "palmares": [
+   "1 Titolo MCC (2019)",
+   "1 Regular Season (2021)"
+  ],
+  "awards": {
+   "MVP": [
+    "Giannis Antetokounmpo (2019)",
+    "Nikola Jokic (2021)"
+   ],
+   "6MY": [
+    "Lou Williams (2019)",
+    "Tyler Herro (2022)",
+    "Keldon Johnson (2026)"
+   ],
+   "MIP": [
+    "Tyrese Maxey (2024)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Cedric Coward",
+    "team": "MEM",
+    "salaries": {
+     "2025/2026": 7.0,
+     "2026/2027": 10.5,
+     "2027/2028": 14.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Tre Johnson",
+    "team": "WAS",
+    "salaries": {
+     "2025/2026": 7.0,
+     "2026/2027": 7.0,
+     "2027/2028": 8.0,
+     "2028/2029": 9.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Anthony Edwards",
+    "team": "MIN",
+    "salaries": {
+     "2026/2027": 16.5,
+     "2027/2028": 24.8
+    },
+    "role": "G"
+   },
+   {
+    "name": "Nickeil Alexander-Walker",
+    "team": "ATL",
+    "salaries": {
+     "2026/2027": 11.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Paskal Siakam",
+    "team": "IND",
+    "salaries": {
+     "2025/2026": 14.0,
+     "2026/2027": 12.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Jalen Williams",
+    "team": "OKC",
+    "salaries": {
+     "2026/2027": 13.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "OG Anunoby",
+    "team": "NYK",
+    "salaries": {
+     "2026/2027": 12.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Keegan Murray",
+    "team": "SAC",
+    "salaries": {
+     "2026/2027": 8.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Walker Kessler",
+    "team": "LAL",
+    "salaries": {
+     "2025/2026": 12.0,
+     "2026/2027": 18.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Aday Mara",
+    "team": "OKC",
+    "salaries": {
+     "2026/2027": 6.0,
+     "2027/2028": 6.0,
+     "2028/2029": 7.0,
+     "2029/2030": 7.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Peyton Watson",
+    "team": "CLE",
+    "salaries": {
+     "2026/2027": 8.5
+    },
+    "role": "G"
+   },
+   {
+    "name": "Duncan Robinson",
+    "team": "DET",
+    "salaries": {
+     "2026/2027": 8.2
+    },
+    "role": "A"
+   },
+   {
+    "name": "Davion Mitchell",
+    "team": "MIA",
+    "salaries": {
+     "2026/2027": 9.1
+    },
+    "role": "G"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 147.8,
+   "2024/2025": 147.1,
+   "2025/2026": 119.1,
+   "2026/2027": 140.8
+  },
+  "logo": "/logos/parabiago-beach-delirio-69ers.webp"
+ },
+ {
+  "id": "san-gimignano-junkyard-dogs",
+  "name": "San Gimignano Junkyard Dogs",
+  "gm": "Davide Previti",
+  "quartiere": "Bande Nere",
+  "zona": "Zona 6",
+  "founded": 2023,
+  "arena": "Anemoni Kennel Arena (Via degli Anemoni 8, Primaticcio)",
+  "colors": "Verde, Arancione",
+  "names": [
+   "San Gimignano Junkyard Dogs (2023-oggi)"
+  ],
+  "palmares": [],
+  "awards": {
+   "MVP": [
+    "Shai Gilgeous-Alexander (2025, 2026)"
+   ],
+   "6MY": [
+    "Naz Reid (2024)"
+   ],
+   "CPY": [
+    "Shai Gilgeous-Alexander (2026)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Kasparas Jakucionis",
+    "team": "MIL",
+    "salaries": {
+     "2025/2026": 6.0,
+     "2026/2027": 6.0,
+     "2027/2028": 7.0,
+     "2028/2029": 7.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Gradey Dick",
+    "team": "LAC",
+    "salaries": {
+     "2023/2024": 6.0,
+     "2024/2025": 6.0,
+     "2025/2026": 7.0,
+     "2026/2027": 7.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Austin Reaves",
+    "team": "LAL",
+    "salaries": {
+     "2026/2027": 14.5
+    },
+    "role": "G"
+   },
+   {
+    "name": "Tyrese Maxey",
+    "team": "PHI",
+    "salaries": {
+     "2026/2027": 17.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Evan Mobley",
+    "team": "CLE",
+    "salaries": {
+     "2025/2026": 15.0,
+     "2026/2027": 14.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Joan Beringer",
+    "team": "MIN",
+    "salaries": {
+     "2025/2026": 6.0,
+     "2026/2027": 6.0,
+     "2027/2028": 7.0,
+     "2028/2029": 7.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Cameron Boozer",
+    "team": "MEM",
+    "salaries": {
+     "2026/2027": 9.0,
+     "2027/2028": 10.0,
+     "2028/2029": 11.0,
+     "2029/2030": 12.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Julius Randle",
+    "team": "BKN",
+    "salaries": {
+     "2026/2027": 14.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Donovan Clingan",
+    "team": "POR",
+    "salaries": {
+     "2024/2025": 7.0,
+     "2025/2026": 7.0,
+     "2026/2027": 8.0,
+     "2027/2028": 9.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Kyle Filipowski",
+    "team": "UTA",
+    "salaries": {
+     "2024/2025": 4.0,
+     "2025/2026": 4.0,
+     "2026/2027": 5.0,
+     "2027/2028": 5.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Ivica Zubac",
+    "team": "IND",
+    "salaries": {
+     "2026/2027": 12.5
+    },
+    "role": "C"
+   },
+   {
+    "name": "Hannes Steinbach",
+    "team": "CHA",
+    "salaries": {
+     "2026/2027": 6.0,
+     "2027/2028": 6.0,
+     "2028/2029": 7.0,
+     "2029/2030": 7.0
+    },
+    "role": "C"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 117.7,
+   "2024/2025": 119.4,
+   "2025/2026": 116.6,
+   "2026/2027": 119.5
+  },
+  "logo": "/logos/san-gimignano-junkyard-dogs.webp"
+ },
+ {
+  "id": "san-siro-enjoint",
+  "name": "San Siro Enjoint",
+  "gm": "Daniele Pirotta",
+  "quartiere": null,
+  "zona": null,
+  "founded": 2016,
+  "arena": null,
+  "colors": null,
+  "names": [
+   "Tolstoj Smokers (2016-2017)",
+   "Tolstoj Enjoint (2017-2019)",
+   "Moncalvo Enjoint (2019-2020)",
+   "Red Church Enjoint (2020-2025)",
+   "San Siro Enjoint (2025-oggi)"
+  ],
+  "palmares": [
+   "1 Regular Season (2023)",
+   "2 Playout (2021, 2022)"
+  ],
+  "awards": {
+   "MVP": [
+    "Joel Embiid (2023)"
+   ],
+   "DPY": [
+    "Rudy Gobert (2019)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Devin Booker",
+    "team": "PHX",
+    "salaries": {
+     "2025/2026": 15.5,
+     "2026/2027": 23.3
+    },
+    "role": "G"
+   },
+   {
+    "name": "Ryan Rollins",
+    "team": "MIL",
+    "salaries": {
+     "2025/2026": 8.1,
+     "2026/2027": 11.5
+    },
+    "role": "G"
+   },
+   {
+    "name": "Jalen Suggs",
+    "team": "ORL",
+    "salaries": {
+     "2026/2027": 9.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Scoot Henderson",
+    "team": "POR",
+    "salaries": {
+     "2026/2027": 6.5
+    },
+    "role": "G"
+   },
+   {
+    "name": "Kevin Durant",
+    "team": "HOU",
+    "salaries": {
+     "2025/2026": 17.5,
+     "2026/2027": 26.3
+    },
+    "role": "A"
+   },
+   {
+    "name": "Chet Holmgren",
+    "team": "OKC",
+    "salaries": {
+     "2026/2027": 13.5,
+     "2027/2028": 20.3
+    },
+    "role": "A"
+   },
+   {
+    "name": "Tari Eason",
+    "team": "HOU",
+    "salaries": {
+     "2026/2027": 8.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Nate Ament",
+    "team": "MIL",
+    "salaries": {
+     "2026/2027": 6.0,
+     "2027/2028": 6.0,
+     "2028/2029": 7.0,
+     "2029/2030": 7.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Derik Queen",
+    "team": "NOP",
+    "salaries": {
+     "2025/2026": 6.0,
+     "2026/2027": 6.0,
+     "2027/2028": 7.0,
+     "2028/2029": 7.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Oso Ighodaro",
+    "team": "PHX",
+    "salaries": {
+     "2024/2025": 4.0,
+     "2025/2026": 4.0,
+     "2026/2027": 5.0,
+     "2027/2028": 5.0
+    },
+    "role": "C"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 145.5,
+   "2024/2025": 119.7,
+   "2025/2026": 147.3,
+   "2026/2027": 115.6
+  },
+  "logo": "/logos/san-siro-enjoint.webp"
+ },
+ {
+  "id": "tolstoj-bum-boomers",
+  "name": "Tolstoj Bum Boomers",
+  "gm": "Andrea Pirotta",
+  "quartiere": null,
+  "zona": null,
+  "founded": 2022,
+  "arena": null,
+  "colors": null,
+  "names": [
+   "Tolstoj Bum Boomers (2022-oggi)"
+  ],
+  "palmares": [
+   "1 Titolo MCC (2026)",
+   "1 Playout (2025)"
+  ],
+  "awards": {
+   "ROY": [
+    "Stephon Castle (2025)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Stephon Castle",
+    "team": "SAS",
+    "salaries": {
+     "2024/2025": 8.0,
+     "2025/2026": 8.0,
+     "2026/2027": 9.0,
+     "2027/2028": 10.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Luka Doncic",
+    "team": "LAL",
+    "salaries": {
+     "2025/2026": 23.0,
+     "2026/2027": 34.5
+    },
+    "role": "G"
+   },
+   {
+    "name": "Ja Morant",
+    "team": "POR",
+    "salaries": {
+     "2026/2027": 13.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Tre Jones",
+    "team": "CHI",
+    "salaries": {
+     "2026/2027": 9.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Deni Avdija",
+    "team": "POR",
+    "salaries": {
+     "2024/2025": 9.0,
+     "2025/2026": 13.5,
+     "2026/2027": 14.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Lauri Markkanen",
+    "team": "UTA",
+    "salaries": {
+     "2026/2027": 12.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Morez Johnson",
+    "team": "DAL",
+    "salaries": {
+     "2026/2027": 7.0,
+     "2027/2028": 7.0,
+     "2028/2029": 8.0,
+     "2029/2030": 9.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Jaden McDaniels",
+    "team": "MIN",
+    "salaries": {
+     "2026/2027": 9.5
+    },
+    "role": "A"
+   },
+   {
+    "name": "Domantas Sabonis",
+    "team": "SAC",
+    "salaries": {
+     "2026/2027": 18.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "DeAndre Ayton",
+    "team": "WAS",
+    "salaries": {
+     "2026/2027": 9.5
+    },
+    "role": "C"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 113.8,
+   "2024/2025": 109.8,
+   "2025/2026": 138.4,
+   "2026/2027": 136.5
+  }
+ },
+ {
+  "id": "vespri-runners",
+  "name": "Vespri Runners",
+  "gm": "Raffaele Chieca",
+  "quartiere": "Barona",
+  "zona": "Zona 6",
+  "founded": 2016,
+  "arena": "T-Center (Via Rimini 38, Barona)",
+  "colors": null,
+  "names": [
+   "Tobruk Moles (2016-2017)",
+   "Vespri Runners (2017-oggi)"
+  ],
+  "palmares": [
+   "1 Titolo MCC (2022)"
+  ],
+  "awards": {
+   "DPY": [
+    "Rudy Gobert (2024)"
+   ],
+   "ROY": [
+    "Cooper Flagg (2026)"
+   ]
+  },
+  "roster": [
+   {
+    "name": "Carlton Carrington",
+    "team": "WAS",
+    "salaries": {
+     "2024/2025": 6.0,
+     "2025/2026": 6.0,
+     "2026/2027": 7.0,
+     "2027/2028": 7.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Tyler Herro",
+    "team": "MIL",
+    "salaries": {
+     "2026/2027": 12.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Desmond Bane",
+    "team": "ORL",
+    "salaries": {
+     "2026/2027": 11.5
+    },
+    "role": "G"
+   },
+   {
+    "name": "Norman Powell",
+    "team": "CHI",
+    "salaries": {
+     "2026/2027": 9.0
+    },
+    "role": "G"
+   },
+   {
+    "name": "Cooper Flagg",
+    "team": "DAL",
+    "salaries": {
+     "2025/2026": 10.0,
+     "2026/2027": 11.0,
+     "2027/2028": 12.0,
+     "2028/2029": 13.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Liam McNeeley",
+    "team": "CHA",
+    "salaries": {
+     "2025/2026": 5.0,
+     "2026/2027": 5.0,
+     "2027/2028": 6.0,
+     "2028/2029": 6.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Caleb Wilson",
+    "team": "CHI",
+    "salaries": {
+     "2026/2027": 8.0,
+     "2027/2028": 8.0,
+     "2028/2029": 9.0,
+     "2029/2030": 10.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Jaren Jackson Jr",
+    "team": "UTA",
+    "salaries": {
+     "2026/2027": 12.0
+    },
+    "role": "A"
+   },
+   {
+    "name": "Onyeka Okongwu",
+    "team": "ATL",
+    "salaries": {
+     "2026/2027": 12.0
+    },
+    "role": "C"
+   },
+   {
+    "name": "Isaiah Hartenstein",
+    "team": "OKC",
+    "salaries": {
+     "2026/2027": 10.5
+    },
+    "role": "C"
+   },
+   {
+    "name": "Jonathan Kuminga",
+    "team": "MIN",
+    "salaries": {
+     "2026/2027": 7.6
+    },
+    "role": "A"
+   }
+  ],
+  "cut": [],
+  "injured": [],
+  "capTotals": {
+   "2023/2024": 117.9,
+   "2024/2025": 140.8,
+   "2025/2026": 118.4,
+   "2026/2027": 105.6
+  },
+  "logo": "/logos/vespri-runners.webp"
+ }
+]
