@@ -144,8 +144,8 @@ export function bracket8(idx, current, seeds, cfg) {
     ? [mk(qfLosers[0], qfLosers[3], cfg.sfMds), mk(qfLosers[1], qfLosers[2], cfg.sfMds)]
     : [mk(tbd('Perdente QF (miglior record)'), tbd('Perdente QF (peggior record)'), cfg.sfMds), mk(tbd('Perdente QF (2° record)'), tbd('Perdente QF (3° record)'), cfg.sfMds)];
   const pair = (a, b, la, lb) => (a && b ? byRank([a, b]) : [a || tbd(la), b || tbd(lb)]);
-  const p5 = mk(...pair(c58[0].winner, c58[1].winner, 'Vinc. 5°-8° A', 'Vinc. 5°-8° B'), cfg.fMds);
-  const p7 = mk(...pair(c58[0].loser, c58[1].loser, 'Perd. 5°-8° A', 'Perd. 5°-8° B'), cfg.fMds);
+  const p5 = mk(...pair(c58[0].winner, c58[1].winner, 'Vinc. semifinale 1', 'Vinc. semifinale 2'), cfg.fMds);
+  const p7 = mk(...pair(c58[0].loser, c58[1].loser, 'Perd. semifinale 1', 'Perd. semifinale 2'), cfg.fMds);
   const p3 = mk(...pair(sf[0].loser, sf[1].loser, 'Perdente SF1', 'Perdente SF2'), cfg.fMds);
   return { qf, sf, f, champion: f.winner || null, places: { c58, p3, p5, p7 } };
 }

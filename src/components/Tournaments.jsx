@@ -55,22 +55,30 @@ function SeriesCard({ s, label, seeds }) {
 }
 
 function Bracket({ b, seeds, titles = ['Quarti', 'Semifinali', 'Finale'] }) {
+  const clean = (t) => t.replace(/[^\p{L}\p{N} ]/gu, '').trim();
   return (
-    <div className="tg-bracket">
-      <div className="tg-col"><h4>{titles[0]}</h4>{b.qf.map((s, i) => <SeriesCard key={i} s={s} label={`Quarto ${i + 1}`} seeds={seeds} />)}</div>
-      <div className="tg-col"><h4>{titles[1]}</h4>{b.sf.map((s, i) => <SeriesCard key={i} s={s} label={`Semifinale ${i + 1}`} seeds={seeds} />)}</div>
-      <div className="tg-col"><h4>{titles[2]}</h4><SeriesCard s={b.f} label="Finale" seeds={seeds} />
-        {b.champion && <div className="tg-champ">Campione: {b.champion.replace(/[^\p{L}\p{N} ]/gu, '').trim()}</div>}
+    <div className="grid" style={{ gap: 18 }}>
+      <div className="tg-bracket">
+        <div className="tg-col"><h4>{titles[0]}</h4>{b.qf.map((s, i) => <SeriesCard key={i} s={s} label={`${titles[0]} ${i + 1}`} seeds={seeds} />)}</div>
+        <div className="tg-col"><h4>{titles[1]}</h4>{b.sf.map((s, i) => <SeriesCard key={i} s={s} label={`Semifinale ${i + 1}`} seeds={seeds} />)}</div>
+        <div className="tg-col"><h4>{titles[2]}</h4>
+          <SeriesCard s={b.f} label="Finale 1°-2° posto" seeds={seeds} />
+          {b.champion && <div className="tg-champ">Campione: {clean(b.champion)}</div>}
+          {b.places && <SeriesCard s={b.places.p3} label="Finale 3°-4° posto (perdenti delle semifinali)" seeds={seeds} />}
+        </div>
       </div>
       {b.places && (
-        <>
-          <div className="tg-col"><h4>Piazzamenti 5°-8°</h4>{b.places.c58.map((s, i) => <SeriesCard key={i} s={s} label={`Semifinale 5°-8° ${i + 1}`} seeds={seeds} />)}</div>
-          <div className="tg-col"><h4>Finali piazzamento</h4>
-            <SeriesCard s={b.places.p3} label="3° posto" seeds={seeds} />
-            <SeriesCard s={b.places.p5} label="5° posto" seeds={seeds} />
-            <SeriesCard s={b.places.p7} label="7° posto" seeds={seeds} />
+        <div className="grid" style={{ gap: 8 }}>
+          <h3 style={{ margin: 0 }}>Tabellone parallelo · eliminate al primo turno</h3>
+          <p className="small muted" style={{ margin: 0 }}>Le quattro squadre uscite al primo turno continuano a giocare. Gli accoppiamenti seguono il record di Regular Season (miglior record contro peggiore, 2° contro 3°), non il tabellone.</p>
+          <div className="tg-bracket">
+            <div className="tg-col"><h4>Semifinali</h4>{b.places.c58.map((s, i) => <SeriesCard key={i} s={s} label={`Semifinale ${i + 1}`} seeds={seeds} />)}</div>
+            <div className="tg-col"><h4>Finali</h4>
+              <SeriesCard s={b.places.p5} label="Finale 5°-6° posto" seeds={seeds} />
+              <SeriesCard s={b.places.p7} label="Finale 7°-8° posto" seeds={seeds} />
+            </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
@@ -165,8 +173,8 @@ export default function Tournaments() {
           </div>
         </div>
       )}
-      {tab === 'playoff' && <><Bracket b={po} seeds={poSeeds} /><p className="small muted">Serie al meglio di {cfg.playoff?.bestOf || 3}: gara 1, 3 e 5 in casa della squadra meglio classificata (+15 punti). Chi viene eliminato continua a giocare per i piazzamenti: gli accoppiamenti seguono il record di Regular Season (migliore contro peggiore), non il tabellone.</p></>}
-      {tab === 'playout' && <><Bracket b={pl} seeds={plSeeds} titles={['Primo turno', 'Semifinali', 'Finale']} /><p className="small muted">Il Playout assegna l'ordine delle prime scelte al FantaDraft. Serie al meglio di {cfg.playout?.bestOf || 3}. Anche qui chi esce continua per i piazzamenti, accoppiato col record di Regular Season.</p></>}
+      {tab === 'playoff' && <><Bracket b={po} seeds={poSeeds} /><p className="small muted">Serie al meglio di {cfg.playoff?.bestOf || 3}: gara 1, 3 e 5 in casa della squadra meglio classificata (+15 punti). Le perdenti delle semifinali si giocano il 3°-4° posto; le eliminate al primo turno continuano nel tabellone parallelo.</p></>}
+      {tab === 'playout' && <><Bracket b={pl} seeds={plSeeds} titles={['Primo turno', 'Semifinali', 'Finale']} /><p className="small muted">Il Playout assegna l'ordine delle prime scelte al FantaDraft. Serie al meglio di {cfg.playout?.bestOf || 3}. Come nei Playoff: finale 3°-4° tra le perdenti delle semifinali e tabellone parallelo per le eliminate al primo turno.</p></>}
     </div>
   );
 }
