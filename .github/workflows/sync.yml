@@ -35,7 +35,6 @@ jobs:
           SYNC_PLAYERS: ${{ github.event_name != 'schedule' || github.event.schedule == '30 7 * * *' || github.event.schedule == '30 13 * * *' }}
       - name: Calendario, risultati e formazioni H2H (lega Draft Dunkest)
         run: node scripts/sync-h2h.mjs
-        continue-on-error: true
         env:
           FIRESTORE_TOKEN: ${{ steps.auth.outputs.access_token }}
           DUNKEST_TOKEN: ${{ secrets.DUNKEST_TOKEN }}

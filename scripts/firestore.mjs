@@ -79,3 +79,12 @@ export async function listDocs(path) {
   } while (pageToken);
   return out;
 }
+
+// legge un documento -> oggetto semplice (null se non esiste)
+export async function getDocData(path) {
+  const res = await fetch(`${BASE}/${path}`, { headers: { Authorization: `Bearer ${token()}`, 'x-goog-user-project': PROJECT } });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`Firestore get ${path} ${res.status}`);
+  const j = await res.json();
+  return Object.fromEntries(Object.entries(j.fields || {}).map(([k, x]) => [k, decode(x)]));
+}

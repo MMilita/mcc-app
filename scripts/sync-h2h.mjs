@@ -2,7 +2,7 @@
 // calendario e risultati di ogni giornata, classifica, formazioni schierate da ogni franchigia.
 // Richiede DUNKEST_TOKEN (segreto GitHub impostato dal proprietario dell'account Dunkest).
 // Senza token esce senza errori: il resto del sync continua a funzionare.
-import { commit, listDocs } from './firestore.mjs';
+import { commit, getDocData, listDocs, patch } from './firestore.mjs';
 import { scoreTeam } from '../src/lib/appscore.js';
 import { keyOf } from '../src/lib/cap.js';
 import { normTeam } from '../src/lib/names.js';
@@ -17,10 +17,26 @@ const ONLY_CURRENT = process.env.H2H_ONLY_CURRENT === 'true'; // durante le part
 const CLEAN = String(TOKEN || '').trim().replace(/^"|"$/g, '').replace(/^Bearer\s+/i, '').trim();
 if (!TOKEN) { console.log('H2H: DUNKEST_TOKEN non impostato, salto.'); process.exit(0); }
 
+// Tipo e scadenza del token, senza mai stamparlo: JWT -> data di scadenza scritta dentro il token
+function tokenInfo(t) {
+  if (/^eyJ[\w-]+\.[\w-]+\.[\w-]+$/.test(t)) {
+    try {
+      const p = JSON.parse(Buffer.from(t.split('.')[1], 'base64url').toString());
+      return { type: 'jwt', exp: p.exp ? p.exp * 1000 : null, iat: p.iat ? p.iat * 1000 : null };
+    } catch { return { type: 'jwt', exp: null }; }
+  }
+  if (/^\d+\|[\w]+$/.test(t)) return { type: 'sanctum', exp: null }; // token Laravel: di solito non scade da solo
+  return { type: 'opaco', exp: null };
+}
+const INFO = tokenInfo(CLEAN);
+const days = INFO.exp ? Math.floor((INFO.exp - Date.now()) / 86400000) : null;
+console.log(`Token Dunkest: tipo ${INFO.type}, lunghezza ${CLEAN.length}, ${INFO.exp ? `scade il ${new Date(INFO.exp).toISOString().slice(0, 10)} (tra ${days} giorni)` : 'nessuna scadenza scritta nel token'}`);
+if (days != null && days <= 7) console.log(`::warning::Il token Dunkest scade tra ${days} giorni: rinnovalo`);
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function api(path) {
   const res = await fetch(`${API}/${path}`, { headers: { Authorization: `Bearer ${CLEAN}`, Accept: 'application/json', 'User-Agent': 'mcc-fantanba-sync/1.2' } });
-  if (res.status === 401) throw new Error(`DUNKEST_TOKEN scaduto o non valido (401): va rigenerato [lunghezza ${CLEAN.length}, formato ${/^eyJ[\w-]+\.[\w-]+\.[\w-]+$/.test(CLEAN) ? 'JWT corretto' : 'NON è un token JWT'}]`);
+  if (res.status === 401) throw Object.assign(new Error(`DUNKEST_TOKEN scaduto o non valido (401): va rigenerato [lunghezza ${CLEAN.length}, formato ${/^eyJ[\w-]+\.[\w-]+\.[\w-]+$/.test(CLEAN) ? 'JWT corretto' : 'NON è un token JWT'}]`), { expired: true });
   if (!res.ok) return { _error: res.status, _path: path };
   const j = await res.json();
   await sleep(250); // gentili con l'API
@@ -49,7 +65,7 @@ async function main() {
   const docs = [];
   const tournament = await api(`tournaments/${TOURNAMENT}`);
   const league = await api(`fantasy-leagues/${LEAGUE}`);
-  docs.push({ path: 'h2h/meta', data: { updatedAt: new Date(), tournamentId: TOURNAMENT, leagueId: LEAGUE, currentMatchday: current.number, tournament: clean(tournament), league: clean(league) } });
+  docs.push({ path: 'h2h/meta', data: { token: { ok: true, type: INFO.type, exp: INFO.exp ? new Date(INFO.exp) : null, checkedAt: new Date() }, updatedAt: new Date(), tournamentId: TOURNAMENT, leagueId: LEAGUE, currentMatchday: current.number, tournament: clean(tournament), league: clean(league) } });
 
   const standings = await api(`tournaments/${TOURNAMENT}/standings?matchday=${current.id}`);
   const overall = await api(`tournaments/${TOURNAMENT}/standings`);
@@ -111,4 +127,13 @@ async function main() {
   console.log(`H2H OK: ${targets.length} giornate (${played.length} giocate, ${upcoming.length} future), classifica G${current.number}`);
 }
 
-main().catch((e) => { console.error('H2H errore:', e.message); process.exit(1); });
+main().catch(async (e) => {
+  console.error('H2H errore:', e.message);
+  if (!e.expired) process.exit(1);
+  // token scaduto: lo segnalo all'app (avviso al Commissioner) e faccio fallire il job una sola volta,
+  // così GitHub manda l'email di errore senza ripeterla a ogni sync
+  const prev = await getDocData('h2h/meta').catch(() => null);
+  const already = prev?.token && prev.token.ok === false;
+  await patch('h2h/meta', { token: { ok: false, type: INFO.type, exp: INFO.exp ? new Date(INFO.exp) : null, failedAt: prev?.token?.failedAt ? new Date(prev.token.failedAt) : new Date(), checkedAt: new Date() } }).catch(() => {});
+  process.exit(already ? 0 : 1);
+});

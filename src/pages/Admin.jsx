@@ -6,6 +6,7 @@ import { useData, fmt, packRows } from '../lib/data';
 import { capSummary, cutWeight, keyOf, SEASON_KEY } from '../lib/cap';
 import { RoleTag, Spinner } from '../components/ui';
 import { useRules } from './Rules';
+import TokenAlert from '../components/TokenAlert';
 import { buildSeasons, seasonLabel, useHistoryDoc } from './History';
 import Tournaments, { useTournamentsConfig } from '../components/Tournaments';
 import { useH2H } from '../lib/h2h';
@@ -39,6 +40,7 @@ export default function Admin() {
         <div><div className="kicker">Area riservata</div><h2>Dashboard Commissioner</h2></div>
         {msg && <span className="pill warn">{msg}</span>}
       </div>
+      <TokenAlert />
       <div className="tabs">{TABS.map(([k, l]) => <button key={k} className={`tab ${tab === k ? 'on' : ''}`} onClick={() => setTab(k)}>{l}</button>)}</div>
 
       {tab === 'users' && <Users users={users} franchises={franchises} ok={ok} fail={fail} />}
