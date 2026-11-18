@@ -19,9 +19,23 @@ const fmtPct = (v, d = 1) => (v == null ? '–' : `${v.toFixed(d).replace('.', '
 const level = (v) => (v == null ? '' : v >= 99 ? 'ok' : v >= 95 ? 'warn' : 'bad');
 const LEVEL_TXT = { ok: '✓ in linea', warn: '△ da tenere d\'occhio', bad: '✕ divergente' };
 
+// Timestamp Firestore, stringa ISO o millisecondi → Date
+const toDate = (v) => (v?.toDate ? v.toDate() : v ? new Date(v) : null);
+const when = (v) => toDate(v)?.toLocaleString('it-IT') || '–';
+
 function useMcc(id) {
   const [d, setD] = useState(undefined);
-  useEffect(() => { if (!id) { setD(null); return undefined; } setD(undefined); return onSnapshot(doc(db, 'mccstats', id), (s) => setD(s.exists() ? s.data() : null), () => setD(null)); }, [id]);
+  useEffect(() => {
+    if (!id) { setD(null); return undefined; }
+    setD(undefined);
+    // modalità test E2E (solo `vite dev`): dati da e2e/mccstats.json, esclusi dalla build
+    if (import.meta.env.DEV && (() => { try { return localStorage.getItem('mcc-e2e') === '1'; } catch { return false; } })()) {
+      let alive = true;
+      import('../../e2e/mccstats.json').then((m) => alive && setD(m.default[id] ?? null)).catch(() => alive && setD(null));
+      return () => { alive = false; };
+    }
+    return onSnapshot(doc(db, 'mccstats', id), (s) => setD(s.exists() ? s.data() : null), () => setD(null));
+  }, [id]);
   return d;
 }
 
@@ -178,7 +192,7 @@ export default function MccEngine() {
 
   const days = useMemo(() => Object.entries(meta?.days || {}).sort(([a], [b]) => a.localeCompare(b))
     .map(([date, x]) => ({ date, v: pct(x.values.ok, x.values.n), pdk: pct(x.pdk?.ok, x.pdk?.n), games: x.games, onlyDk: x.onlyDk, onlyOurs: x.onlyOurs })), [meta]);
-  const mds = useMemo(() => Object.entries(meta?.mds || {}).map(([n, s]) => ({ n: Number(n), ...s })).sort((a, b) => b.n - a.n), [meta]);
+  const mds = useMemo(() => Object.entries(meta?.mds || {}).map(([n, s]) => ({ ...s, players: s.n, n: Number(n) })).sort((a, b) => b.n - a.n), [meta]);
 
   if (meta === undefined) return <Spinner />;
   if (!meta) return <div className="card pad"><h3>Motore MCC</h3><p className="muted">Il motore non ha ancora girato. Avvialo da GitHub → Actions → "MCC stats" → Run workflow.</p></div>;
@@ -189,7 +203,7 @@ export default function MccEngine() {
   const live = mds.filter((m) => m.mode === 'live');
   const lastLive = live[0];
   const pdkPct = pct(pdkAll.ok, pdkAll.n), valPct = pct(valAll.ok, valAll.n), plusPct = pct(plusAll.ok, plusAll.n);
-  const crPct = lastLive ? pct(lastLive.crOk, lastLive.crN) : pct(meta.crNow?.same, meta.crNow?.n);
+  const crPct = lastLive ? pct(lastLive.crOk, lastLive.crN) : null; // prima della G{startMd} chiusa coincidono per costruzione
 
   return (
     <div className="grid mcc">
@@ -197,13 +211,16 @@ export default function MccEngine() {
         <div className="row between" style={{ flexWrap: 'wrap', gap: 8 }}>
           <div><h3 style={{ margin: 0 }}>Motore MCC vs Dunkest</h3>
             <p className="small muted" style={{ margin: '4px 0 0' }}>Statistiche dai box score ufficiali NBA, infortuni da CBS Sports, formule Dunkest replicate. Dunkest usa OPTA: le piccole differenze sono valutazioni diverse degli statistici, non errori di calcolo.</p></div>
-          <span className="small muted">Aggiornato {meta.updatedAt?.toDate?.().toLocaleString('it-IT')} · consolidato fino al {meta.lastDate || '–'}</span>
+          <span className="small muted">Aggiornato {when(meta.updatedAt)} · consolidato fino al {meta.lastDate || '–'}</span>
         </div>
         <div className="mcc-tiles">
           <Tile label="PDK per partita" value={fmtPct(pdkPct, 2)} sub={`${pdkAll.ok}/${pdkAll.n} prestazioni identiche`} lvl={level(pdkPct)} />
           <Tile label="Tutte le statistiche" value={fmtPct(valPct, 2)} sub={`${valAll.ok.toLocaleString('it-IT')}/${valAll.n.toLocaleString('it-IT')} valori (25 voci × giocatore × giorno)`} lvl={level(valPct)} />
           <Tile label="Variazione crediti" value={fmtPct(plusPct, 1)} sub={`${plusAll.ok}/${plusAll.n} · giornate ${mds.map((m) => m.n).sort((a, b) => a - b)[0] ?? '–'}-${mds[0]?.n ?? '–'}`} lvl={level(plusPct)} />
-          <Tile label="Crediti MCC = Dunkest" value={fmtPct(crPct, 1)} sub={lastLive ? `inizio G${lastLive.n} · entro 0,1: ${fmtPct(pct(lastLive.cr01, lastLive.crN), 1)} · scarto max ${String(lastLive.crMax).replace('.', ',')}` : `crediti attuali (motore autonomo da G${meta.startMd})`} lvl={level(crPct)} />
+          <Tile label="Crediti MCC = Dunkest" value={lastLive ? fmtPct(crPct, 1) : 'In attesa'}
+            sub={lastLive ? `inizio G${lastLive.n} · entro 0,1: ${fmtPct(pct(lastLive.cr01, lastLive.crN), 1)} · scarto max ${String(lastLive.crMax).replace('.', ',')}`
+              : `I crediti MCC partono da quelli Dunkest del ${toDate(meta.seededAt)?.toLocaleDateString('it-IT')} e da lì evolvono da soli: il primo confronto vero arriva a fine G${meta.startMd} consolidata.`}
+            lvl={lastLive ? level(crPct) : null} />
         </div>
         {meta.warnings?.length > 0 && <details className="small" style={{ marginTop: 10 }}><summary><span className="pill warn">{meta.warnings.length} avvisi</span></summary><ul>{meta.warnings.map((w, i) => <li key={i}>{w}</li>)}</ul></details>}
       </div>
