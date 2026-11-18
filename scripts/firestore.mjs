@@ -29,18 +29,33 @@ export function toFields(obj) {
 }
 
 // docs: [{ path: 'collection/doc', data: {...} }]  — sovrascrive interamente ogni documento
+// Le scritture vanno in blocchi da max 400 documenti e ~200 KB (oltre, Firestore risponde 429 "maximum bandwidth
+// for writes"); su 429/503 si riprova con attesa crescente.
 export async function commit(docs) {
   const t = token();
-  for (let i = 0; i < docs.length; i += 400) {
-    const writes = docs.slice(i, i + 400).map(({ path, data }) => ({
-      update: { name: `projects/${PROJECT}/databases/(default)/documents/${path}`, fields: toFields(data) },
-    }));
-    const res = await fetch(`${BASE}:commit`, {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${t}`, 'Content-Type': 'application/json', 'x-goog-user-project': PROJECT },
-      body: JSON.stringify({ writes }),
-    });
-    if (!res.ok) throw new Error(`Firestore commit ${res.status}: ${await res.text()}`);
+  const writes = docs.map(({ path, data }) => ({
+    update: { name: `projects/${PROJECT}/databases/(default)/documents/${path}`, fields: toFields(data) },
+  }));
+  const batches = []; let cur = []; let size = 0;
+  for (const w of writes) {
+    const s = JSON.stringify(w).length;
+    if (cur.length && (cur.length >= 400 || size + s > 200_000)) { batches.push(cur); cur = []; size = 0; }
+    cur.push(w); size += s;
+  }
+  if (cur.length) batches.push(cur);
+  for (const batch of batches) {
+    for (let attempt = 1; ; attempt++) {
+      const res = await fetch(`${BASE}:commit`, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${t}`, 'Content-Type': 'application/json', 'x-goog-user-project': PROJECT },
+        body: JSON.stringify({ writes: batch }),
+      });
+      if (res.ok) break;
+      const body = await res.text();
+      if ((res.status === 429 || res.status === 503) && attempt < 7) { await new Promise((r) => setTimeout(r, 1000 * 2 ** attempt)); continue; }
+      throw new Error(`Firestore commit ${res.status}: ${body}`);
+    }
+    if (batches.length > 1) await new Promise((r) => setTimeout(r, 300));
   }
   return docs.length;
 }
