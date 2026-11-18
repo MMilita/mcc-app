@@ -689,3 +689,30 @@ button.tm-row:hover { background: var(--surface-2); }
 .pd-games th, .pd-games td { padding: 6px 6px; font-size: 13px; text-align: right; }
 .pd-games th:nth-child(-n+2), .pd-games td:nth-child(-n+2) { text-align: left; }
 .pd-head > svg, .pd-head > .jersey { width: 76px !important; height: auto !important; flex: 0 0 76px; }
+
+/* ============ Motore MCC (dashboard Commissioner) ============ */
+.mcc td.num, .mcc th.num { font-size: 13px; text-align: right; white-space: nowrap; }
+.mcc table td, .mcc table th { padding: 7px 8px; }
+.mcc .tab.on { background: var(--ink); color: var(--marble); border-color: var(--ink); }
+.mcc-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin-top: 14px; }
+.mcc-tile { background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 12px; display: grid; gap: 6px; align-content: start; }
+.mcc-tile-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.mcc-tile-value { font-family: var(--display); font-size: 26px; line-height: 1.1; }
+.mcc-tile .pill { justify-self: start; }
+.mcc-meter { display: block; height: 8px; border-radius: 4px; background: var(--line); position: relative; overflow: hidden; min-width: 80px; }
+.mcc-meter i { position: absolute; inset: 0 auto 0 0; background: var(--ink-3); border-radius: 0 4px 4px 0; }
+.mcc-chart-head { min-height: 20px; margin-bottom: 6px; }
+.mcc-chart { position: relative; margin-left: 34px; }
+.mcc-grid { position: absolute; left: 0; right: 0; border-top: 1px dashed var(--line); }
+.mcc-grid span { position: absolute; left: -34px; top: -8px; font-size: 10px; color: var(--muted); }
+.mcc-cols { position: absolute; inset: 0; display: flex; align-items: flex-end; gap: 2px; }
+.mcc-col { flex: 1; height: 100%; display: flex; align-items: flex-end; border: 0; padding: 0; background: transparent; cursor: pointer; min-width: 6px; }
+.mcc-col i { display: block; width: 100%; background: var(--ink-3); border-radius: 4px 4px 0 0; }
+.mcc-col:hover i, .mcc-col:focus-visible i { background: var(--tram); }
+.mcc-col.on i { background: var(--cross); }
+.mcc-axis { display: flex; justify-content: space-between; margin-left: 34px; margin-top: 4px; }
+.mcc tr.mcc-diff td { background: rgba(242, 169, 0, .10); }
+.mcc tr.mcc-sel td { background: var(--surface-2); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) .mcc-meter i, :root:not([data-theme='light']) .mcc-col i { background: #8fa3cc; } :root:not([data-theme='light']) .mcc .tab.on { background: var(--marble); color: var(--ink); } }
+:root[data-theme='dark'] .mcc-meter i, :root[data-theme='dark'] .mcc-col i { background: #8fa3cc; }
+:root[data-theme='dark'] .mcc .tab.on { background: var(--marble); color: var(--ink); }

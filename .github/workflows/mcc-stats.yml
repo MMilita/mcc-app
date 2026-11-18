@@ -1,0 +1,43 @@
+name: MCC stats
+# Motore "MCC stats": statistiche dai box score ufficiali NBA + injury report CBS, formule Dunkest replicate,
+# confronto campo per campo con Dunkest (fase in parallelo). Risultati in Firestore mccstats/*,
+# visibili al Commissioner in /admin → "Motore MCC".
+# Una volta al giorno alle 17:00 italiane (16:00 UTC): partite di 2 giorni prima già consolidate e
+# injury report CBS aggiornato prima delle partite della sera. ~2 min/giorno (il primo giro ~6 min).
+on:
+  schedule:
+    - cron: '0 16 * * *'
+  workflow_dispatch:
+    inputs:
+      reprocess_from:
+        description: 'Rielabora da questa data (AAAA-MM-GG), vuoto = solo i giorni nuovi'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: mcc-stats
+  cancel-in-progress: false
+
+jobs:
+  mcc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/260909537293/locations/global/workloadIdentityPools/github/providers/github
+          service_account: mcc-sync@my-project-1516274864079.iam.gserviceaccount.com
+          token_format: access_token
+      - run: node scripts/sync-mcc-stats.mjs
+        env:
+          FIRESTORE_TOKEN: ${{ steps.auth.outputs.access_token }}
+          MCC_REPROCESS_FROM: ${{ github.event.inputs.reprocess_from }}

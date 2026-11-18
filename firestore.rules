@@ -29,6 +29,8 @@ service cloud.firestore {
     // Giocatori sincronizzati da Dunkest (scrive solo il job di sync / admin)
     match /players/{doc} { allow read: if true; allow write: if isAdmin(); }
     match /playerlog/{doc} { allow read: if true; allow write: if isAdmin(); }
+    // Motore MCC (statistiche da NBA + confronto con Dunkest): per ora visibile solo al Commissioner
+    match /mccstats/{doc} { allow read: if isAdmin(); allow write: if isAdmin(); }
 
     // Profili utente: ognuno crea/legge il proprio, la franchigia la assegna il Commissioner
     match /users/{uid} {

@@ -7,12 +7,13 @@ import { capSummary, cutWeight, keyOf, SEASON_KEY } from '../lib/cap';
 import { RoleTag, Spinner } from '../components/ui';
 import { useRules } from './Rules';
 import TokenAlert from '../components/TokenAlert';
+import MccEngine from '../components/MccEngine';
 import { buildSeasons, seasonLabel, useHistoryDoc } from './History';
 import Tournaments, { useTournamentsConfig } from '../components/Tournaments';
 import { useH2H } from '../lib/h2h';
 import { istDraw, istGroupMds, istPots, parseMds, standingsAt } from '../lib/tournaments';
 
-const TABS = [['users', 'Utenti'], ['site', 'Landing & giornata'], ['standings', 'Classifica'], ['rosters', 'Rose & contratti'], ['records', 'Albo & record'], ['rules', 'Regolamento'], ['tournaments', 'Tornei'], ['history', 'Storico'], ['lineups', 'Formazioni'], ['sync', 'Dati Dunkest']];
+const TABS = [['users', 'Utenti'], ['site', 'Landing & giornata'], ['standings', 'Classifica'], ['rosters', 'Rose & contratti'], ['records', 'Albo & record'], ['rules', 'Regolamento'], ['tournaments', 'Tornei'], ['history', 'Storico'], ['lineups', 'Formazioni'], ['sync', 'Dati Dunkest'], ['mcc', 'Motore MCC']];
 const NEXT = ['2027/2028', '2028/2029'];
 const up1 = (x) => Math.ceil(x * 10 - 1e-9) / 10; // arrotondamento per eccesso (Regolamento par. 3)
 
@@ -63,6 +64,7 @@ export default function Admin() {
           </table>
         </div>
       )}
+      {tab === 'mcc' && <MccEngine />}
       {tab === 'sync' && (
         <div className="card pad">
           <h3>Sincronizzazione Dunkest</h3>
