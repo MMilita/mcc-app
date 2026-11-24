@@ -251,6 +251,7 @@ export default function Landing() {
                         <span title="Playout vinti"><b>{t.po}</b>Playout</span>
                       </div>
                       {f.names?.length > 1 && <p className="small muted ex">Prima: {f.names.slice(0, -1).map((n) => n.replace(/\s*\(.*\)/, '')).join(' · ')}</p>}
+                      <Link className="btn sm ghost" to={`/app/franchigia/${f.id}`} style={{ marginTop: 10, alignSelf: 'flex-start' }}>Roster e contratti →</Link>
                     </article>
                   );
                 })}

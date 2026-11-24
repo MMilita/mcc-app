@@ -24,7 +24,7 @@ export function CapCard({ franchise }) {
         <span>Contratti attivi {fmt(c.activeTotal)}</span><span>Tagliati {fmt(c.cutTotal)}</span><span>{c.players} giocatori</span>
       </div>
       {c.thirdYearRisk && <p className="small" style={{ marginBottom: 0, color: 'var(--cross)', fontWeight: 600 }}>Attenzione: sopra il cap nelle due stagioni precedenti. Un terzo anno consecutivo non è consentito: a fine Regular Season verrebbero annullati i contratti più costosi fino a rientrare (art. 3.1).</p>}
-      {c.draftFloor != null && <p className="small" style={{ marginBottom: 0 }}>Sforato al FantaDraft: <b>{fmt(c.draftFloor)}</b> è il minimo conteggiato a fine stagione (art. 3.1), anche se con i tagli scendi sotto.</p>}
+      {c.draftFloor != null && <p className="small" style={{ marginBottom: 0 }}>Sforato al FantaDraft: a fine stagione conta almeno <b>{fmt(c.draftFloor)}</b> (art. 3.1), anche se adesso sei a {fmt(c.total)}. Luxury tax calcolata su {fmt(c.counted)}.</p>}
       {c.over > 0 && <p className="small" style={{ marginBottom: 0 }}>Oltre il cap di <b>{fmt(c.over)}</b> · luxury tax stimata <b>{fmt(c.taxEuro, 2)} €</b> ({c.taxRate} € per milione{c.secondYear ? ', secondo anno consecutivo' : ''}). {c.draftFloor == null ? 'Si recupera con i tagli entro la Trade Deadline (il cap si misura a fine Regular Season).' : ''}</p>}
     </div>
   );

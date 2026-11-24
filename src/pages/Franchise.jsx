@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { useData, fmt } from '../lib/data';
-import { cutWeight, keyOf } from '../lib/cap';
+import { cutCharge, isRookieScale, keyOf } from '../lib/cap';
 import { FranchiseLogo, RoleTag, Spinner, franchiseColors } from '../components/ui';
 import { CapCard } from './Home';
 import TeamMatches, { LastLineupButton } from '../components/TeamMatches';
@@ -30,8 +30,6 @@ export default function Franchise() {
           <LastLineupButton franchise={f} />
         </div>
       </section>
-      <TeamMatches franchise={f} />
-      <CapCard franchise={f} />
       <div className="card table-wrap">
         <div className="pad" style={{ paddingBottom: 0 }}><h3>Contratti</h3></div>
         <table>
@@ -48,14 +46,16 @@ export default function Franchise() {
             {(f.cut || []).map((p) => (
               <tr key={`cut-${p.name}`} style={{ opacity: 0.6 }}>
                 <td><span className="pill bad">T</span></td>
-                <td><s>{p.name}</s> <span className="small muted">tagliato (50%)</span></td>
-                {SEASONS.map((s) => <td key={s} className="num">{p.salaries?.[s] ? fmt(cutWeight(p.salaries[s])) : ''}</td>)}
+                <td><s>{p.name}</s> <span className="small muted">tagliato (50%{isRookieScale(p) ? ', TO non garantite a 0' : ''})</span></td>
+                {SEASONS.map((s) => <td key={s} className="num">{p.salaries?.[s] ? fmt(cutCharge(p, s)) : ''}</td>)}
                 <td />
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      <CapCard franchise={f} />
+      <TeamMatches franchise={f} />
       {f.names?.length > 0 && (
         <div className="card pad"><h3>Storia</h3><ul className="small" style={{ margin: '8px 0 0', paddingLeft: 18 }}>{f.names.map((n) => <li key={n}>{n}</li>)}</ul></div>
       )}

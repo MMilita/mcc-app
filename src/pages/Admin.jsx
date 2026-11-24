@@ -3,7 +3,7 @@ import { Fragment, useEffect, useMemo, useState } from 'react';
 import { collection, deleteDoc, doc, onSnapshot, setDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useData, fmt, packRows } from '../lib/data';
-import { capSummary, cutWeight, keyOf, SEASON_KEY } from '../lib/cap';
+import { capSummary, cutCharge, isRookieScale, keyOf, SEASON_KEY } from '../lib/cap';
 import { RoleTag, Spinner } from '../components/ui';
 import { useRules } from './Rules';
 import TokenAlert from '../components/TokenAlert';
@@ -242,7 +242,7 @@ function Rosters({ franchises, franchiseById, players, owners, ok, fail }) {
 
   // azioni sul giocatore (Regolamento: taglio 50% sul cap; Injury List recupera il 90% della stagione in corso)
   const ACTIONS = {
-    cut: { label: 'Taglia', confirm: (p) => `Tagliare ${p.name}? Peserà il 50% sul cap per tutta la durata del contratto (taglio ${(f.cut || []).length + 1} di 4).`,
+    cut: { label: 'Taglia', confirm: (p) => `Tagliare ${p.name}? Peserà il 50% sul cap per ${isRookieScale(p) && Object.keys(p.salaries || {}).sort().indexOf(SEASON_KEY) < 2 ? 'i due anni garantiti della Rookie Scale (le Team Option del 3°-4° anno pesano 0)' : 'tutta la durata del contratto'} (taglio ${(f.cut || []).length + 1} di 4).`,
       run: (p) => write({ roster: without(f.roster, p.name), cut: [...(f.cut || []), { ...p, cutAt: today() }] }, `${p.name} tagliato`) },
     il: { label: 'Injury List', confirm: (p) => `Mettere ${p.name} in Injury List? Libera lo slot e recupera il 90% dello stipendio ${SEASON_KEY}; non sarà utilizzabile fino alla prossima stagione.`,
       run: (p) => write({ roster: without(f.roster, p.name), injured: [...(f.injured || []), { ...p, orig: p.salaries, salaries: { ...p.salaries, [SEASON_KEY]: Math.round((p.salaries?.[SEASON_KEY] || 0) * 0.1 * 10) / 10 }, ilAt: today() }] }, `${p.name} in Injury List`) },
@@ -280,7 +280,7 @@ function Rosters({ franchises, franchiseById, players, owners, ok, fail }) {
         <label className="small" htmlFor="draft-total" style={{ fontWeight: 700 }}>Monte stipendi a fine FantaDraft {SEASON_KEY}</label>
         <input id="draft-total" type="number" step="0.1" defaultValue={f.draftTotals?.[SEASON_KEY] ?? ''} key={`dt-${f.id}`} style={{ width: 110 }}
           onBlur={(e) => { const val = e.target.value === '' ? null : +e.target.value; if (val !== (f.draftTotals?.[SEASON_KEY] ?? null)) write({ draftTotals: { ...(f.draftTotals || {}), [SEASON_KEY]: val } }, 'Totale fine Draft salvato'); }} />
-        <span className="small muted">Se supera 120 diventa il minimo conteggiato a fine stagione (art. 3.1). {c.draftFloor != null ? `Ora conteggiato: ${fmt(c.total)}.` : ''}</span>
+        <span className="small muted">Se supera 120 diventa il minimo conteggiato a fine stagione (art. 3.1). {c.draftFloor != null ? `Attuale ${fmt(c.total)}, a fine stagione conta ${fmt(c.counted)}.` : ''}</span>
         <button className="btn sm ghost" onClick={snapshotAll}>Registra fine Draft per tutte le franchigie</button>
       </div>
 
@@ -319,7 +319,7 @@ function Rosters({ franchises, franchiseById, players, owners, ok, fail }) {
           <div className="pad" style={{ paddingBottom: 0 }}><h3>Tagliati e Injury List</h3></div>
           <table><tbody>
             {(f.cut || []).map((p) => (
-              <tr key={`c-${p.name}`}><td><span className="pill bad">Tagliato</span></td><td><b>{p.name}</b><div className="small muted">{p.cutAt ? `dal ${p.cutAt} · ` : ''}pesa {fmt(cutWeight(p.salaries?.[SEASON_KEY] || 0))} sul cap</div></td>
+              <tr key={`c-${p.name}`}><td><span className="pill bad">Tagliato</span></td><td><b>{p.name}</b><div className="small muted">{p.cutAt ? `dal ${p.cutAt} · ` : ''}pesa {fmt(cutCharge(p))} sul cap</div></td>
                 <td className="row" style={{ gap: 4, justifyContent: 'flex-end' }}><button className="btn sm ghost" onClick={() => restoreCut(p)}>Ripristina</button><button className="btn sm ghost danger" onClick={() => removeOther('cut', p)}>Elimina</button></td></tr>
             ))}
             {(f.injured || []).map((p) => (
