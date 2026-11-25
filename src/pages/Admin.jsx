@@ -4,7 +4,7 @@ import { collection, deleteDoc, doc, onSnapshot, setDoc, updateDoc } from 'fireb
 import { db } from '../firebase';
 import { useData, fmt, packRows } from '../lib/data';
 import { capSummary, CONTRACT_KINDS, contractKind, contractType, cutCharge, isRookieScale, keyOf, SEASON_KEY } from '../lib/cap';
-import { ContractLegend, RoleTag, Spinner } from '../components/ui';
+import { ContractLegend, FranchiseLogo, RoleTag, Spinner } from '../components/ui';
 import { useRules } from './Rules';
 import TokenAlert from '../components/TokenAlert';
 import MccEngine from '../components/MccEngine';
@@ -351,7 +351,59 @@ function Rosters({ franchises, franchiseById, players, owners, ok, fail }) {
         <button className="btn" disabled={!dkSel || (+add.salary > 0 && +add.salary < dkSel.cr)} onClick={sign}>Aggiungi a {f.name}</button>
       </div>
 
+      <LogoEditor f={f} write={write} />
       <FranchiseInfo key={f.id} f={f} write={write} />
+    </div>
+  );
+}
+
+// stemma: l'immagine caricata viene ritagliata al centro in un quadrato 256x256 e salvata come WebP
+// direttamente nel documento della franchigia (pochi KB, niente Storage)
+function imageToLogo(file) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      const S = 256, side = Math.min(img.naturalWidth, img.naturalHeight);
+      const c = document.createElement('canvas'); c.width = S; c.height = S;
+      const g = c.getContext('2d');
+      g.fillStyle = '#fff'; g.fillRect(0, 0, S, S); // sfondo bianco come il cerchio dello stemma
+      g.drawImage(img, (img.naturalWidth - side) / 2, (img.naturalHeight - side) / 2, side, side, 0, 0, S, S);
+      URL.revokeObjectURL(url);
+      // Safari non sa salvare in WebP: in quel caso JPEG
+      const type = c.toDataURL('image/webp').startsWith('data:image/webp') ? 'image/webp' : 'image/jpeg';
+      let q = 0.88, out = c.toDataURL(type, q);
+      while (out.length > 150000 && q > 0.4) { q -= 0.12; out = c.toDataURL(type, q); }
+      resolve(out);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('Immagine non leggibile')); };
+    img.src = url;
+  });
+}
+
+function LogoEditor({ f, write }) {
+  const [busy, setBusy] = useState(false);
+  const original = `/logos/${f.id}.webp`;
+  const onFile = async (e) => {
+    const file = e.target.files?.[0]; e.target.value = '';
+    if (!file) return;
+    setBusy(true);
+    try { await write({ logo: await imageToLogo(file) }, 'Stemma aggiornato'); } finally { setBusy(false); }
+  };
+  return (
+    <div className="card pad">
+      <h3>Stemma · {f.name}</h3>
+      <div className="row" style={{ gap: 16, marginTop: 10, flexWrap: 'wrap' }}>
+        <FranchiseLogo f={f} size={88} />
+        <div className="grid" style={{ gap: 8 }}>
+          <label className="btn sm" style={{ cursor: 'pointer' }}>
+            {busy ? 'Caricamento…' : 'Carica nuovo stemma'}
+            <input type="file" accept="image/*" onChange={onFile} disabled={busy} style={{ display: 'none' }} aria-label={`Nuovo stemma ${f.name}`} />
+          </label>
+          {f.logo !== original && <button className="btn sm ghost" onClick={() => write({ logo: original }, 'Stemma originale ripristinato')}>Ripristina stemma originale</button>}
+        </div>
+      </div>
+      <p className="small muted" style={{ marginTop: 10 }}>PNG, JPG o WebP. Meglio un'immagine quadrata: viene ritagliata al centro e mostrata in un cerchio. Cambia subito su sito e app.</p>
     </div>
   );
 }
