@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useData, fmt } from '../lib/data';
-import { capSummary, CAP, APRON, salaryOf, keyOf } from '../lib/cap';
-import { FranchiseLogo, RoleTag } from '../components/ui';
+import { capSummary, CAP, APRON, salaryOf, keyOf, contractKind, CONTRACT_KINDS } from '../lib/cap';
+import { ContractLegend, FranchiseLogo, RoleTag } from '../components/ui';
 import TeamMatches from '../components/TeamMatches';
 import UpdatesToast from '../components/UpdatesToast';
 
@@ -87,7 +87,7 @@ export default function Home() {
                   <tr key={p.name}>
                     <td><RoleTag role={p.role} /></td>
                     <td><b>{p.name}</b> <span className="small muted">{d?.team || p.team}</span></td>
-                    <td className="num">{fmt(salaryOf(p))}</td>
+                    <td className="num"><span className={`ck ck-${contractKind(p)}`} title={CONTRACT_KINDS[contractKind(p)]}>{fmt(salaryOf(p))}</span></td>
                     <td className="num">{d ? fmt(d.cr) : '–'}</td>
                     <td className="num" style={{ fontWeight: 700 }}>{d ? fmt(d.pdk) : '–'}</td>
                   </tr>
@@ -96,6 +96,7 @@ export default function Home() {
             </tbody>
           </table>
         </div>
+        <div className="pad" style={{ paddingTop: 10 }}><ContractLegend /></div>
       </div>
     </div>
   );

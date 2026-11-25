@@ -716,3 +716,14 @@ button.tm-row:hover { background: var(--surface-2); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme='light']) .mcc-meter i, :root:not([data-theme='light']) .mcc-col i { background: #8fa3cc; } :root:not([data-theme='light']) .mcc .tab.on { background: var(--marble); color: var(--ink); } }
 :root[data-theme='dark'] .mcc-meter i, :root[data-theme='dark'] .mcc-col i { background: #8fa3cc; }
 :root[data-theme='dark'] .mcc .tab.on { background: var(--marble); color: var(--ink); }
+
+/* tipo di contratto nei roster: standard neutro, rookie verde (pieno = garantito, tratteggiato = Team Option), RFA viola */
+.ck { display: inline-block; min-width: 34px; padding: 2px 6px; border-radius: 6px; border: 1.5px solid transparent; }
+.ck-rookie { background: rgba(47, 191, 113, .18); color: #127a43; }
+.ck-to { background: rgba(47, 191, 113, .06); border-style: dashed; border-color: #2fbf71; color: #127a43; }
+.ck-rfa { background: rgba(108, 92, 231, .16); color: #5140c9; }
+:root[data-theme="dark"] .ck-rookie, :root[data-theme="dark"] .ck-to { color: #5fe09a; }
+:root[data-theme="dark"] .ck-rfa { color: #b3a8ff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ck-rookie, :root:not([data-theme="light"]) .ck-to { color: #5fe09a; } :root:not([data-theme="light"]) .ck-rfa { color: #b3a8ff; } }
+.ck-legend { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; font-size: 12px; color: var(--muted); }
+.ck-legend .ck { min-width: 0; font-weight: 700; }

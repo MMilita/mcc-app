@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { useData, fmt } from '../lib/data';
-import { cutCharge, isRookieScale, keyOf } from '../lib/cap';
-import { FranchiseLogo, RoleTag, Spinner, franchiseColors } from '../components/ui';
+import { CONTRACT_KINDS, contractKind, cutCharge, isRookieScale, keyOf } from '../lib/cap';
+import { ContractLegend, FranchiseLogo, RoleTag, Spinner, franchiseColors } from '../components/ui';
 import { CapCard } from './Home';
 import TeamMatches, { LastLineupButton } from '../components/TeamMatches';
 
@@ -39,7 +39,7 @@ export default function Franchise() {
               <tr key={p.name}>
                 <td><RoleTag role={p.role} /></td>
                 <td style={{ whiteSpace: 'nowrap' }}><b>{p.name}</b> <span className="small muted">{p.team}</span></td>
-                {SEASONS.map((s) => <td key={s} className="num">{p.salaries?.[s] ? fmt(p.salaries[s]) : ''}</td>)}
+                {SEASONS.map((s) => <td key={s} className="num">{p.salaries?.[s] ? <span className={`ck ck-${contractKind(p, s)}`} title={CONTRACT_KINDS[contractKind(p, s)]}>{fmt(p.salaries[s])}</span> : ''}</td>)}
                 <td className="num" style={{ fontWeight: 700 }}>{fmt(playerByKey[keyOf(p.name)]?.pdk)}</td>
               </tr>
             ))}
@@ -53,6 +53,7 @@ export default function Franchise() {
             ))}
           </tbody>
         </table>
+        <div className="pad" style={{ paddingTop: 10 }}><ContractLegend /></div>
       </div>
       <CapCard franchise={f} />
       <TeamMatches franchise={f} />

@@ -1,3 +1,4 @@
+import { CONTRACT_KINDS } from '../lib/cap';
 import { useEffect, useState } from 'react';
 // Componenti grafici condivisi del brand MCC
 // colori canotta: [corpo, bordini/scritte, numero]
@@ -130,3 +131,13 @@ export function franchiseColors(colors = '') {
   const found = words.map((w) => COLOR_WORDS[w]).filter(Boolean);
   return found.length ? found : ['#24304d', '#f2a900'];
 }
+
+// legenda dei colori dei contratti (standard, rookie garantito, rookie Team Option, RFA)
+export function ContractLegend() {
+  return (
+    <div className="ck-legend">
+      {Object.entries(CONTRACT_KINDS).map(([k, label]) => <span key={k}><span className={`ck ck-${k}`}>{k === 'std' ? 'Std' : k === 'rfa' ? 'RFA' : k === 'to' ? 'TO' : 'R'}</span> {label}</span>)}
+    </div>
+  );
+}
+

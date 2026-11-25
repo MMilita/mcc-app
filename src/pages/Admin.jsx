@@ -3,8 +3,8 @@ import { Fragment, useEffect, useMemo, useState } from 'react';
 import { collection, deleteDoc, doc, onSnapshot, setDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useData, fmt, packRows } from '../lib/data';
-import { capSummary, cutCharge, isRookieScale, keyOf, SEASON_KEY } from '../lib/cap';
-import { RoleTag, Spinner } from '../components/ui';
+import { capSummary, CONTRACT_KINDS, contractKind, contractType, cutCharge, isRookieScale, keyOf, SEASON_KEY } from '../lib/cap';
+import { ContractLegend, RoleTag, Spinner } from '../components/ui';
 import { useRules } from './Rules';
 import TokenAlert from '../components/TokenAlert';
 import MccEngine from '../components/MccEngine';
@@ -246,7 +246,7 @@ function Rosters({ franchises, franchiseById, players, owners, ok, fail }) {
       run: (p) => write({ roster: without(f.roster, p.name), cut: [...(f.cut || []), { ...p, cutAt: today() }] }, `${p.name} tagliato`) },
     il: { label: 'Injury List', confirm: (p) => `Mettere ${p.name} in Injury List? Libera lo slot e recupera il 90% dello stipendio ${SEASON_KEY}; non sarà utilizzabile fino alla prossima stagione.`,
       run: (p) => write({ roster: without(f.roster, p.name), injured: [...(f.injured || []), { ...p, orig: p.salaries, salaries: { ...p.salaries, [SEASON_KEY]: Math.round((p.salaries?.[SEASON_KEY] || 0) * 0.1 * 10) / 10 }, ilAt: today() }] }, `${p.name} in Injury List`) },
-    del: { label: 'Elimina', confirm: (p) => `Eliminare ${p.name} dalla rosa come inserimento sbagliato? Sparisce del tutto (nessun peso sul cap). Per un vero taglio usa "Taglia".`,
+    del: { label: 'Elimina', confirm: (p) => `Eliminare ${p.name}? Esce dalla rosa e la franchigia recupera il 100% del contratto (nessun peso sul cap). Da usare per un giocatore senza più contratto NBA o non più nel listone Dunkest (art. 4.5), o per un inserimento sbagliato. Per un taglio normale (50%) usa "Taglia".`,
       run: (p) => write({ roster: without(f.roster, p.name) }, `${p.name} eliminato`) },
   };
   // fotografa il monte stipendi attuale di tutte le franchigie come "fine FantaDraft" della stagione
@@ -257,6 +257,8 @@ function Rosters({ franchises, franchiseById, players, owners, ok, fail }) {
   const removeOther = (key, p) => write({ [key]: without(f[key], p.name) }, `${p.name} rimosso`);
   const setSalary = (p, v) => write({ roster: f.roster.map((x) => (x.name === p.name ? { ...x, salaries: { ...x.salaries, [SEASON_KEY]: +v } } : x)) });
   const setRole = (p, v) => write({ roster: f.roster.map((x) => (x.name === p.name ? { ...x, role: v } : x)) });
+  // tipo di contratto: rookie forza la Rookie Scale anche con meno di 4 stagioni, RFA = rifirma annuale (art. 4.7)
+  const setType = (p, t) => write({ roster: f.roster.map((x) => (x.name === p.name ? { ...x, rookie: t === 'rookie', rfa: t === 'rfa' } : x)) }, `${p.name}: contratto ${CONTRACT_KINDS[t === 'rookie' ? 'rookie' : t].replace(' · anni garantiti', '')}`);
   const sign = () => {
     const dk = players.find((p) => p.name === add.name);
     if (!dk) return;
@@ -264,7 +266,7 @@ function Rosters({ franchises, franchiseById, players, owners, ok, fail }) {
     const salaries = { [SEASON_KEY]: up1(base) };
     if (add.years >= 2) salaries[NEXT[0]] = up1(base * 1.5);
     if (add.years >= 3) salaries[NEXT[1]] = up1(base * 2);
-    write({ roster: [...f.roster, { name: dk.name, team: dk.team, role: dk.pos, salaries, signedAt: today() }] }, `${dk.name} firmato`).then(() => setAdd({ name: '', years: 1, salary: '' }));
+    write({ roster: [...f.roster, { name: dk.name, team: dk.team, role: dk.pos, salaries, signedAt: today(), ...(add.years === -1 ? { rfa: true } : {}) }] }, `${dk.name} firmato`).then(() => setAdd({ name: '', years: 1, salary: '' }));
   };
   const dkSel = players.find((p) => p.name === add.name);
   const yrs = (p) => Object.entries(p.salaries || {}).filter(([k]) => k > SEASON_KEY).map(([k, v]) => `${k.slice(2, 4)}/${k.slice(7)}: ${v}`).join(' · ');
@@ -291,7 +293,10 @@ function Rosters({ franchises, franchiseById, players, owners, ok, fail }) {
             <Fragment key={p.name}>
               <tr>
                 <td><select aria-label={`Ruolo ${p.name}`} value={p.role} onChange={(e) => setRole(p, e.target.value)} style={{ width: 62, padding: '6px' }}>{['G', 'A', 'C'].map((r) => <option key={r}>{r}</option>)}</select></td>
-                <td><b>{p.name}</b> <span className="small muted">{p.team}</span></td>
+                <td><b>{p.name}</b> <span className="small muted">{p.team}</span>
+                  <div><select aria-label={`Contratto ${p.name}`} className={`ck ck-${contractKind(p)}`} value={contractType(p)} onChange={(e) => setType(p, e.target.value)} style={{ width: 'auto', padding: '3px 6px', fontSize: 12, marginTop: 4 }}>
+                    <option value="std">Standard</option><option value="rookie">Rookie</option><option value="rfa">RFA</option>
+                  </select></div></td>
                 <td><input aria-label={`Stipendio ${p.name}`} type="number" step="0.1" defaultValue={p.salaries?.[SEASON_KEY] ?? ''} onBlur={(e) => e.target.value !== String(p.salaries?.[SEASON_KEY] ?? '') && setSalary(p, e.target.value)} style={{ width: 84 }} /></td>
                 <td className="small muted hide-sm">{yrs(p)}</td>
                 <td><div className="row" style={{ gap: 4, flexWrap: 'wrap' }}>
@@ -312,6 +317,7 @@ function Rosters({ franchises, franchiseById, players, owners, ok, fail }) {
             </Fragment>
           ))}</tbody>
         </table>
+        <div className="pad" style={{ paddingTop: 10 }}><ContractLegend /></div>
       </div>
 
       {((f.cut || []).length > 0 || (f.injured || []).length > 0) && (
@@ -338,9 +344,10 @@ function Rosters({ franchises, franchiseById, players, owners, ok, fail }) {
             <datalist id="fa-list">{free.map((p) => <option key={p.id} value={p.name}>{p.team} {p.pos} · {p.cr}</option>)}</datalist>
           </div>
           <div className="field"><label htmlFor="fa-price">Prezzo d'asta</label><input id="fa-price" type="number" step="0.1" value={add.salary} placeholder={dkSel ? `min ${dkSel.cr}` : ''} onChange={(e) => setAdd({ ...add, salary: e.target.value })} /></div>
-          <div className="field"><label htmlFor="fa-years">Durata</label><select id="fa-years" value={add.years} onChange={(e) => setAdd({ ...add, years: +e.target.value })}><option value={1}>1 anno</option><option value={2}>2 anni (+50%)</option><option value={3}>3 anni (+100%)</option></select></div>
+          <div className="field"><label htmlFor="fa-years">Durata</label><select id="fa-years" value={add.years} onChange={(e) => setAdd({ ...add, years: +e.target.value })}><option value={1}>1 anno</option><option value={2}>2 anni (+50%)</option><option value={3}>3 anni (+100%)</option><option value={-1}>Rifirma RFA (1 anno)</option></select></div>
         </div>
         {dkSel && +add.salary > 0 && +add.salary < dkSel.cr && <p className="small" style={{ color: 'var(--cross)' }}>Offerta sotto il valore Dunkest attuale ({dkSel.cr}): non ammessa dal regolamento.</p>}
+        {add.years === -1 && <p className="small muted">RFA (art. 4.7): contratto annuale; prezzo = nuova valutazione Dunkest, o il massimo tra questa e l'ultimo anno di contratto se dichiarato a fine 2° o 3° anno. In rosa comparirà in viola. Se il giocatore è ancora in rosa, basta inserire lo stipendio e scegliere RFA dal menu sotto il suo nome.</p>}
         <button className="btn" disabled={!dkSel || (+add.salary > 0 && +add.salary < dkSel.cr)} onClick={sign}>Aggiungi a {f.name}</button>
       </div>
 

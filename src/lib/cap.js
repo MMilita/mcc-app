@@ -21,6 +21,17 @@ export function seasonOfDate(iso) {
 // esercitabile solo a fine 2° anno. I contratti FA durano al massimo 3 anni, quindi 4 stagioni = rookie.
 export const isRookieScale = (p) => p?.rookie ?? Object.keys(p?.salaries || {}).length === 4;
 
+// tipo di contratto del giocatore (scelto dal Commissioner; rookie dedotto dalle 4 stagioni se non impostato)
+// RFA (art. 4.7): rifirma annuale del giocatore dichiarato Restricted Free Agent
+export const contractType = (p) => (p?.rfa ? 'rfa' : isRookieScale(p) ? 'rookie' : 'std');
+// tipo per una singola stagione: i rookie si dividono in anni garantiti (1°-2°) e Team Option (3°-4°)
+export const CONTRACT_KINDS = { std: 'Standard', rfa: 'RFA', rookie: 'Rookie · anni garantiti', to: 'Rookie · Team Option' };
+export function contractKind(p, season = SEASON_KEY) {
+  const t = contractType(p);
+  if (t !== 'rookie') return t;
+  return Object.keys(p.salaries || {}).sort().indexOf(season) >= 2 ? 'to' : 'rookie';
+}
+
 // peso sul cap di un giocatore tagliato in una stagione: 50% dello stipendio,
 // ma 0 sugli anni di Team Option se il rookie è stato tagliato nei primi due anni (non ancora garantiti)
 export function cutCharge(p, season = SEASON_KEY) {
